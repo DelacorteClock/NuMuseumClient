@@ -1,1 +1,1 @@
-{"mappings":"AAGA;;;;AAIA","sources":["src/index.scss"],"sourcesContent":["$colour1: #CE8E00;\r\n$colour2: #6CBE45;\r\n\r\n.numuseum {\r\n    color: $colour1;\r\n}\r\n\r\n.numuseumhighlight {\r\n    color: $colour2;\r\n}"],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"","sources":["src/index.scss"],"sourcesContent":[null],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
