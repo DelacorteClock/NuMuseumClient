@@ -27150,6 +27150,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _itemCard = require("../item-card/item-card");
+var _itemView = require("../item-view/item-view");
 var _s = $RefreshSig$();
 const MainView = function() {
     _s();
@@ -27805,53 +27807,44 @@ const MainView = function() {
             "isFeatured": true
         }
     ]);
+    //Make default if no item card clicked
+    const [selectedItem, setSelectedItem] = (0, _react.useState)(null);
+    if (selectedItem) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemView.ItemView), {
+        itemInfo: selectedItem
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 9,
+        columnNumber: 16
+    }, this);
+    //Message for empty item array
     if (items.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "ITEM LIST IS BLANK"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 5,
+        lineNumber: 13,
         columnNumber: 16
     }, this);
+    //Return divs with cards if item array not empty
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: items.map(function(item) {
-            var { primaryImage , title , itemId  } = item;
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: primaryImage,
-                            width: "150px"
-                        }, void 0, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 13,
-                            columnNumber: 34
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 13,
-                        columnNumber: 29
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: title
-                    }, void 0, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 14,
-                        columnNumber: 29
-                    }, this)
-                ]
-            }, itemId, true, {
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
+                itemInfo: item,
+                onItemCardClick: function(newItemSelection) {
+                    setSelectedItem(newItemSelection);
+                }
+            }, item.itemId, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 12,
-                columnNumber: 25
+                lineNumber: 19,
+                columnNumber: 24
             }, this);
         })
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 8,
+        lineNumber: 17,
         columnNumber: 9
     }, this);
 };
-_s(MainView, "IY7Px6oJttmFGHpkgv60PTieesE=");
+_s(MainView, "pDqQbxNqLXvkuuOmo5ZLI7t5K8I=");
 _c = MainView;
 exports.default = MainView;
 var _c;
@@ -27862,7 +27855,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq"}],"9wLrc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk"}],"9wLrc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -28025,6 +28018,467 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"da1983ac2749c614":"dNcLm"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
+},{"da1983ac2749c614":"dNcLm"}],"juZtq":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$52f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$52f7.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ItemCard", ()=>ItemCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const ItemCard = function({ onItemCardClick , itemInfo  }) {
+    var { primaryImage , title , isFeatured  } = itemInfo;
+    function featuredScan(featuredStatus) {
+        if (featuredStatus) return "\uD83D\uDE05";
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        onClick: function() {
+            onItemCardClick(itemInfo);
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: primaryImage,
+                    width: "150px"
+                }, void 0, false, {
+                    fileName: "src/components/item-card/item-card.jsx",
+                    lineNumber: 10,
+                    columnNumber: 22
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/item-card/item-card.jsx",
+                lineNumber: 10,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    title,
+                    " ",
+                    featuredScan(isFeatured)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/item-card/item-card.jsx",
+                lineNumber: 11,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/item-card/item-card.jsx",
+        lineNumber: 9,
+        columnNumber: 13
+    }, this);
+};
+_c = ItemCard;
+var _c;
+$RefreshReg$(_c, "ItemCard");
+
+  $parcel$ReactRefreshHelpers$52f7.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"6v4mk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b908 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b908.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ItemView", ()=>ItemView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const ItemView = function({ itemInfo  }) {
+    var { primaryImage , itemId , title , artist , exhibit , objectName , objectDate , medium , dimensions , description , department , isPublicDomain , isFeatured  } = itemInfo;
+    //Check whether or not to display dimensions
+    function dimensionScan(dimensionArray) {
+        if (dimensionArray.length === 0) return;
+        else if (dimensionArray.length === 2) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Dimensions: "
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 10,
+                    columnNumber: 25
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: [
+                        dimensionArray[0],
+                        "cm by ",
+                        dimensionArray[1],
+                        "cm"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 11,
+                    columnNumber: 25
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/item-view/item-view.jsx",
+            lineNumber: 9,
+            columnNumber: 21
+        }, this);
+        else if (dimensionArray.length === 3) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Dimensions: "
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 17,
+                    columnNumber: 25
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: [
+                        dimensionArray[0],
+                        "cm by ",
+                        dimensionArray[1],
+                        "cm by ",
+                        dimensionArray[2],
+                        "cm"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 18,
+                    columnNumber: 25
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/item-view/item-view.jsx",
+            lineNumber: 16,
+            columnNumber: 21
+        }, this);
+        else //A single dimension array should not exist
+        console.error("BAD DIMENSIONS ARRAY FOR " + itemId);
+    }
+    //Check whether or not to display exhibit
+    function exhibitScan(exhibitName) {
+        if (exhibitName) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Exhibit: "
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 31,
+                    columnNumber: 25
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: exhibitName
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 32,
+                    columnNumber: 25
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/item-view/item-view.jsx",
+            lineNumber: 30,
+            columnNumber: 21
+        }, this);
+        else console.log("NO EXHIBIT FOR " + itemId);
+    }
+    //Returns logo if item is featured
+    function featuredScan(featuredStatus) {
+        if (featuredStatus) return "\uD83D\uDE05";
+    }
+    //Give pd status
+    function pdScan(pdStatus) {
+        if (pdStatus) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Status: "
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 50,
+                    columnNumber: 25
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "In public domain"
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 51,
+                    columnNumber: 25
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/item-view/item-view.jsx",
+            lineNumber: 49,
+            columnNumber: 21
+        }, this);
+        else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Status: "
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 57,
+                    columnNumber: 25
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    children: "Not in public domain"
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 58,
+                    columnNumber: 25
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/item-view/item-view.jsx",
+            lineNumber: 56,
+            columnNumber: 21
+        }, this);
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: primaryImage,
+                    width: "300px"
+                }, void 0, false, {
+                    fileName: "src/components/item-view/item-view.jsx",
+                    lineNumber: 65,
+                    columnNumber: 22
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/item-view/item-view.jsx",
+                lineNumber: 65,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: title
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 67,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: " by "
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 68,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: artist.artistName
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 69,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: " "
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 70,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: featuredScan(isFeatured)
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 71,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/item-view/item-view.jsx",
+                lineNumber: 66,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: "ABOUT THIS WORK"
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 74,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: description
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 75,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/item-view/item-view.jsx",
+                lineNumber: 73,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: "ITEM FACTS"
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 78,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Item ID: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 80,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: itemId
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 81,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 79,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Artist: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 84,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: artist.artistName
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 85,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 83,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Year Created: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 88,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: objectDate
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 89,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 87,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Department: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 92,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: department.deptTitle
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 93,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 91,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Medium: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 96,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: medium
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 97,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 95,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Type: "
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 100,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: objectName
+                            }, void 0, false, {
+                                fileName: "src/components/item-view/item-view.jsx",
+                                lineNumber: 101,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 99,
+                        columnNumber: 21
+                    }, this),
+                    dimensionScan(dimensions),
+                    exhibitScan(exhibit),
+                    pdScan(isPublicDomain)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/item-view/item-view.jsx",
+                lineNumber: 77,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/item-view/item-view.jsx",
+        lineNumber: 64,
+        columnNumber: 13
+    }, this);
+};
+_c = ItemView;
+var _c;
+$RefreshReg$(_c, "ItemView");
+
+  $parcel$ReactRefreshHelpers$b908.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
