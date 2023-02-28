@@ -27810,7 +27810,10 @@ const MainView = function() {
     //Make default if no item card clicked
     const [selectedItem, setSelectedItem] = (0, _react.useState)(null);
     if (selectedItem) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemView.ItemView), {
-        itemInfo: selectedItem
+        itemInfo: selectedItem,
+        onBackClick: function() {
+            setSelectedItem(null);
+        }
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 9,
@@ -28091,7 +28094,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ItemView", ()=>ItemView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const ItemView = function({ itemInfo  }) {
+const ItemView = function({ itemInfo , onBackClick  }) {
     var { primaryImage , itemId , title , artist , exhibit , objectName , objectDate , medium , dimensions , description , department , isPublicDomain , isFeatured  } = itemInfo;
     //Check whether or not to display dimensions
     function dimensionScan(dimensionArray) {
@@ -28461,6 +28464,14 @@ const ItemView = function({ itemInfo  }) {
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
                 lineNumber: 77,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: onBackClick,
+                children: "BACK"
+            }, void 0, false, {
+                fileName: "src/components/item-view/item-view.jsx",
+                lineNumber: 107,
                 columnNumber: 17
             }, this)
         ]

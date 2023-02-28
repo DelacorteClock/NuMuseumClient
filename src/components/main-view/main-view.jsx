@@ -6,7 +6,7 @@ const MainView = function () {
     //Make default if no item card clicked
     const [selectedItem, setSelectedItem] = useState(null);
     if (selectedItem) {
-        return <ItemView itemInfo={selectedItem} />
+        return <ItemView itemInfo={selectedItem} onBackClick={function () {setSelectedItem(null)}} />
     }
     //Message for empty item array
     if (items.length === 0) {

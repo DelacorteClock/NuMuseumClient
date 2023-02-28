@@ -1,4 +1,4 @@
-export const ItemView = function ( {itemInfo}) {
+export const ItemView = function ({itemInfo, onBackClick}) {
     var {primaryImage, itemId, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured} = itemInfo;
     //Check whether or not to display dimensions
     function dimensionScan(dimensionArray) {
@@ -104,6 +104,7 @@ export const ItemView = function ( {itemInfo}) {
                     {exhibitScan(exhibit)}
                     {pdScan(isPublicDomain)}
                 </div>
+                <button onClick={onBackClick}>BACK</button>
             </div>
             );
 };
