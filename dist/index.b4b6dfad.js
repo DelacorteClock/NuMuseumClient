@@ -27156,7 +27156,6 @@ var _s = $RefreshSig$();
 const MainView = function() {
     _s();
     const [items, setItems] = (0, _react.useState)([]);
-    //Make default if no item card clicked
     const [selectedItem, setSelectedItem] = (0, _react.useState)(null);
     (0, _react.useEffect)(function() {
         fetch("https://rubbersuitleatherpantsspacesuit.onrender.com/collection").then(function(res) {
@@ -27173,15 +27172,29 @@ const MainView = function() {
         }
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 17,
+        lineNumber: 16,
         columnNumber: 16
     }, this);
     //Message for empty item array
     if (items.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "ITEM LIST IS BLANK"
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("marquee", {
+            behavior: "alternate",
+            scrollamount: "15",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Loading NuMuseum Collection"
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 20,
+                columnNumber: 69
+            }, this)
+        }, void 0, false, {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 20,
+            columnNumber: 21
+        }, this)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 21,
+        lineNumber: 20,
         columnNumber: 16
     }, this);
     //Return divs with cards if item array not empty
@@ -27194,13 +27207,13 @@ const MainView = function() {
                 }
             }, item.itemId, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 24
             }, this);
         })
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 25,
+        lineNumber: 24,
         columnNumber: 9
     }, this);
 };
@@ -27473,7 +27486,7 @@ $RefreshReg$(_c, "ItemCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","prop-types":"7wKI2"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *

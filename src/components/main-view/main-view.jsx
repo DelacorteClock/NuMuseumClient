@@ -3,8 +3,7 @@ import {ItemCard} from '../item-card/item-card';
 import {ItemView} from '../item-view/item-view';
 const MainView = function () {
     const [items, setItems] = useState([]);
-    //Make default if no item card clicked
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);;
     useEffect(function () {
         fetch('https://rubbersuitleatherpantsspacesuit.onrender.com/collection').then(function (res) {
             return res.json();
@@ -18,7 +17,7 @@ const MainView = function () {
     }
     //Message for empty item array
     if (items.length === 0) {
-        return <div>ITEM LIST IS BLANK</div>;
+        return <div><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></div>;
     }
     //Return divs with cards if item array not empty
     return (
