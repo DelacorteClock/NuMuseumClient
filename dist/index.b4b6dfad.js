@@ -27155,660 +27155,16 @@ var _itemView = require("../item-view/item-view");
 var _s = $RefreshSig$();
 const MainView = function() {
     _s();
-    const [items, setItems] = (0, _react.useState)([
-        {
-            "_id": "63f1a2dd0f6f179c878ec1cf",
-            "itemId": "1440001",
-            "title": "Architectural Photography Collection One",
-            "artist": {
-                "_id": "63f199a40f6f179c878ec1a6",
-                "artistName": "ClassicalFilm",
-                "artistBiography": "ClassicalFilm started making films about architecture in a large urban area over a decade ago. ClassicalFilm works integrate photography and/or videos with music to create exciting virtual journeys to marvellous destinations.",
-                "artistStart": "2012",
-                "artistMedium": [
-                    "Film"
-                ]
-            },
-            "exhibit": "Photography Films",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1440001.jpg",
-            "links": [],
-            "objectName": "Photography Film",
-            "objectDate": "2022",
-            "medium": "Film",
-            "dimensions": [],
-            "description": "This film includes views of architecture and architectural details at a large university.",
-            "department": {
-                "_id": "63f19d040f6f179c878ec1be",
-                "deptTitle": "Film",
-                "deptDescription": "NuMuseum's Film Department (FD) maintains a digital collection of recorded, photographical and animated films from the 21st century. All films in the collection are the property of NuMuseum.",
-                "deptId": "4"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a7900f6f179c878ec1e6",
-            "itemId": "1250011",
-            "title": "Museum No 238",
-            "artist": {
-                "_id": "63f199eb0f6f179c878ec1aa",
-                "artistName": "Solid Architecture",
-                "artistBiography": "Solid Architecture began designing monumental structures including museums and shops in early 2022. The first significant work by Solid Architecture was a design for a natural history museum made in February of 2022: Museum No 238.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "Monumental Structures",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1250011.png",
-            "links": [],
-            "objectName": "Building Model",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "This is a plan for the exterior of a museum building. The architectural style is inspired by classical architecture but modernised to create a more striking effect. A monumental dome in the middle of the museum is covered internally with a painting.",
-            "department": {
-                "_id": "63f19d070f6f179c878ec1bf",
-                "deptTitle": "Architecture",
-                "deptDescription": "NuMuseum's Architecture Department (AD) maintains a digital collection of architectural concepts and models. The items in the collection are stored mainly in the 3mf file format which allows them to be visited and photographed virtually at any time by museum officials.",
-                "deptId": "5"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a4160f6f179c878ec1d4",
-            "itemId": "1440011",
-            "title": "Architectural Photography Collection Two",
-            "artist": {
-                "_id": "63f199a40f6f179c878ec1a6",
-                "artistName": "ClassicalFilm",
-                "artistBiography": "ClassicalFilm started making films about architecture in a large urban area over a decade ago. ClassicalFilm works integrate photography and/or videos with music to create exciting virtual journeys to marvellous destinations.",
-                "artistStart": "2012",
-                "artistMedium": [
-                    "Film"
-                ]
-            },
-            "exhibit": "Photography Films",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1440011.jpg",
-            "links": [],
-            "objectName": "Photography Film",
-            "objectDate": "2022",
-            "medium": "Film",
-            "dimensions": [],
-            "description": "This film includes views of architecture and architectural details at a small university.",
-            "department": {
-                "_id": "63f19d040f6f179c878ec1be",
-                "deptTitle": "Film",
-                "deptDescription": "NuMuseum's Film Department (FD) maintains a digital collection of recorded, photographical and animated films from the 21st century. All films in the collection are the property of NuMuseum.",
-                "deptId": "4"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a1450f6f179c878ec1ca",
-            "itemId": "1340001",
-            "title": "PVC Doric Column Factory",
-            "artist": {
-                "_id": "63f199b80f6f179c878ec1a8",
-                "artistName": "PVC Doric Duck",
-                "artistBiography": "The PVC Doric Duck is a professional animator who admires Doric columns and decided to make a factory dedicated to the manufacture of PVC Doric Columns. The animations of PVC Doric Duck are defined by their use of bright colours, music and simple geometrical shapes like ellipses and rectangles.",
-                "artistStart": "2021",
-                "artistMedium": [
-                    "Film"
-                ]
-            },
-            "exhibit": "Simpl Animation",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1340001.jpg",
-            "links": [],
-            "objectName": "Animated Film",
-            "objectDate": "2022",
-            "medium": "Film",
-            "dimensions": [],
-            "description": "A factory makes PVC doric columns which are then used to construct a house in a short animated film.",
-            "department": {
-                "_id": "63f19d040f6f179c878ec1be",
-                "deptTitle": "Film",
-                "deptDescription": "NuMuseum's Film Department (FD) maintains a digital collection of recorded, photographical and animated films from the 21st century. All films in the collection are the property of NuMuseum.",
-                "deptId": "4"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        },
-        {
-            "_id": "63f1a8170f6f179c878ec1e8",
-            "itemId": "1250021",
-            "title": "Flute No 1618",
-            "artist": {
-                "_id": "63f199eb0f6f179c878ec1aa",
-                "artistName": "Solid Architecture",
-                "artistBiography": "Solid Architecture began designing monumental structures including museums and shops in early 2022. The first significant work by Solid Architecture was a design for a natural history museum made in February of 2022: Museum No 238.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "Monumental Structures",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1250021.png",
-            "links": [],
-            "objectName": "Building Model",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "This building's design features triangular forms and pyramid-shaped entrance structures. Its red roof was inspired by pointed gothic arches.",
-            "department": {
-                "_id": "63f19d070f6f179c878ec1bf",
-                "deptTitle": "Architecture",
-                "deptDescription": "NuMuseum's Architecture Department (AD) maintains a digital collection of architectural concepts and models. The items in the collection are stored mainly in the 3mf file format which allows them to be visited and photographed virtually at any time by museum officials.",
-                "deptId": "5"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a8670f6f179c878ec1ea",
-            "itemId": "1250031",
-            "title": "Lute No 2414",
-            "artist": {
-                "_id": "63f199eb0f6f179c878ec1aa",
-                "artistName": "Solid Architecture",
-                "artistBiography": "Solid Architecture began designing monumental structures including museums and shops in early 2022. The first significant work by Solid Architecture was a design for a natural history museum made in February of 2022: Museum No 238.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "Monumental Structures",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1250031.png",
-            "links": [],
-            "objectName": "Building Model",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "Lute is inspired by the geometrical characteristics of octagons, rectangles and circles. It features miniature residential towers on the setback and a sculptural roof resembling a pomegranate.",
-            "department": {
-                "_id": "63f19d070f6f179c878ec1bf",
-                "deptTitle": "Architecture",
-                "deptDescription": "NuMuseum's Architecture Department (AD) maintains a digital collection of architectural concepts and models. The items in the collection are stored mainly in the 3mf file format which allows them to be visited and photographed virtually at any time by museum officials.",
-                "deptId": "5"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a9960f6f179c878ec1f3",
-            "itemId": "1160011",
-            "title": "The Complement",
-            "artist": {
-                "_id": "63f199dd0f6f179c878ec1a9",
-                "artistName": "Quik the Artist",
-                "artistBiography": "Quik the Artist is a duck who thinks and draws in a two dimensional way. Quik the Artist resides in the dome of a tall and historical hotel building.",
-                "artistStart": "2020",
-                "artistMedium": [
-                    "Painting",
-                    "Digital"
-                ]
-            },
-            "exhibit": "Simpl Forms",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1160011.png",
-            "links": [],
-            "objectName": "Virtual Painting (B&W)",
-            "objectDate": "2021",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "Two artistic forms complement and connect to each other in this black and white virtual painting.",
-            "department": {
-                "_id": "63f19d0d0f6f179c878ec1c0",
-                "deptTitle": "Virtual Painting",
-                "deptDescription": "NuMuseum's Virtual Painting Department (VPD) is responsible for the digital collection and storage of digital two-dimensional artworks. Many of the the most significant works in the VPD are stored in the SVG format. Each of the virtual paintings is available in PNG and/or JPEG image format. Additions to the collection are made based on their quality and impact. All virtual paintings are the property of NuMuseum.",
-                "deptId": "6"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        },
-        {
-            "_id": "63f1a9310f6f179c878ec1ef",
-            "itemId": "1160001",
-            "title": "North + East Waves",
-            "artist": {
-                "_id": "63f199dd0f6f179c878ec1a9",
-                "artistName": "Quik the Artist",
-                "artistBiography": "Quik the Artist is a duck who thinks and draws in a two dimensional way. Quik the Artist resides in the dome of a tall and historical hotel building.",
-                "artistStart": "2020",
-                "artistMedium": [
-                    "Painting",
-                    "Digital"
-                ]
-            },
-            "exhibit": "Simpl Forms",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1160001.png",
-            "links": [],
-            "objectName": "Virtual Painting (B&W)",
-            "objectDate": "2021",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "This black and white wave-inspired virtual painting is intended to make a strong visual impact.",
-            "department": {
-                "_id": "63f19d0d0f6f179c878ec1c0",
-                "deptTitle": "Virtual Painting",
-                "deptDescription": "NuMuseum's Virtual Painting Department (VPD) is responsible for the digital collection and storage of digital two-dimensional artworks. Many of the the most significant works in the VPD are stored in the SVG format. Each of the virtual paintings is available in PNG and/or JPEG image format. Additions to the collection are made based on their quality and impact. All virtual paintings are the property of NuMuseum.",
-                "deptId": "6"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a9f10f6f179c878ec1f5",
-            "itemId": "1160021",
-            "title": "CycleMap",
-            "artist": {
-                "_id": "63f199dd0f6f179c878ec1a9",
-                "artistName": "Quik the Artist",
-                "artistBiography": "Quik the Artist is a duck who thinks and draws in a two dimensional way. Quik the Artist resides in the dome of a tall and historical hotel building.",
-                "artistStart": "2020",
-                "artistMedium": [
-                    "Painting",
-                    "Digital"
-                ]
-            },
-            "exhibit": "Simpl Forms",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1160021.png",
-            "links": [],
-            "objectName": "Virtual Painting (B&W)",
-            "objectDate": "2021",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "Black lines inspired by public transport maps travel across the plain white background of this virtual painting.",
-            "department": {
-                "_id": "63f19d0d0f6f179c878ec1c0",
-                "deptTitle": "Virtual Painting",
-                "deptDescription": "NuMuseum's Virtual Painting Department (VPD) is responsible for the digital collection and storage of digital two-dimensional artworks. Many of the the most significant works in the VPD are stored in the SVG format. Each of the virtual paintings is available in PNG and/or JPEG image format. Additions to the collection are made based on their quality and impact. All virtual paintings are the property of NuMuseum.",
-                "deptId": "6"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a1990f6f179c878ec1cb",
-            "itemId": "1340011",
-            "title": "Duck's Trip to School",
-            "artist": {
-                "_id": "63f199b80f6f179c878ec1a8",
-                "artistName": "PVC Doric Duck",
-                "artistBiography": "The PVC Doric Duck is a professional animator who admires Doric columns and decided to make a factory dedicated to the manufacture of PVC Doric Columns. The animations of PVC Doric Duck are defined by their use of bright colours, music and simple geometrical shapes like ellipses and rectangles.",
-                "artistStart": "2021",
-                "artistMedium": [
-                    "Film"
-                ]
-            },
-            "exhibit": "Simpl Animation",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1340011.jpg",
-            "links": [],
-            "objectName": "Animated Film",
-            "objectDate": "2021",
-            "medium": "Film",
-            "dimensions": [],
-            "description": "A duck takes a trip to school and makes several funny mistakes on the way in this short animated film.",
-            "department": {
-                "_id": "63f19d040f6f179c878ec1be",
-                "deptTitle": "Film",
-                "deptDescription": "NuMuseum's Film Department (FD) maintains a digital collection of recorded, photographical and animated films from the 21st century. All films in the collection are the property of NuMuseum.",
-                "deptId": "4"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a6c60f6f179c878ec1e0",
-            "itemId": "1250001",
-            "title": "Vibration No 450",
-            "artist": {
-                "_id": "63f199eb0f6f179c878ec1aa",
-                "artistName": "Solid Architecture",
-                "artistBiography": "Solid Architecture began designing monumental structures including museums and shops in early 2022. The first significant work by Solid Architecture was a design for a natural history museum made in February of 2022: Museum No 238.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "Monumental Structures",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1250001.png",
-            "links": [],
-            "objectName": "Building Model",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "This virtual building is a monument to celebrate the concept of vibration. The juxtaposition of limestone and glass captures the monument's essence: a modern interpretation of the ancient dome. Repetitive art deco-inspired details represent the crests of waves in vibrations.",
-            "department": {
-                "_id": "63f19d070f6f179c878ec1bf",
-                "deptTitle": "Architecture",
-                "deptDescription": "NuMuseum's Architecture Department (AD) maintains a digital collection of architectural concepts and models. The items in the collection are stored mainly in the 3mf file format which allows them to be visited and photographed virtually at any time by museum officials.",
-                "deptId": "5"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        },
-        {
-            "_id": "63f1aac00f6f179c878ec1fa",
-            "itemId": "1270001",
-            "title": "Bird in Flight",
-            "artist": {
-                "_id": "63f199fd0f6f179c878ec1ab",
-                "artistName": "Standard PVC",
-                "artistBiography": "Standard PVC makes virtual abstact sculptures inspired by architectural forms. They are designed to look like they are made from different materials (eg PVC and bronze). There are plans to manufacture the works of Standard PVC based on their computer designs.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "NuuPVC++",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1270001.png",
-            "links": [],
-            "objectName": "Virtual Sculpture (PVC)",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "This virtual PVC sculpture is inspired by the anatomy of a column. It consists of an undulating shaft which decreases in diameter at the top to form a cone-like capital.",
-            "department": {
-                "_id": "63f19d110f6f179c878ec1c1",
-                "deptTitle": "Virtual Sculpture",
-                "deptDescription": "NuMuseum's Virtual Sculpture Department (VSD) is responsible for the digital collection and storage of digital three-dimensional artworks. All works in the VPD are stored in the 3MF format. Each of the virtual sculptures is depicted in PNG and/or JPEG image format. Officials at the department are responsible for rendering and photographing the virtual sculptures with digital technology. Additions to the collection are made based on their quality and impact. All paintings are the property of NuMuseum.",
-                "deptId": "7"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1abf30f6f179c878ec203",
-            "itemId": "3520001",
-            "title": "Nullem's Place",
-            "artist": {
-                "_id": "63f199b10f6f179c878ec1a7",
-                "artistName": "Minobbiane",
-                "artistBiography": "Minobbiane is a rabbit who likes to write stories and gets inpiration from the city in which it lives.",
-                "artistStart": "Circa 2009",
-                "artistMedium": [
-                    "Written"
-                ]
-            },
-            "exhibit": "",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/3520001.png",
-            "links": [],
-            "objectName": "Book",
-            "objectDate": "2019",
-            "medium": "Written",
-            "dimensions": [],
-            "description": "A duck named Nullem isolates itself in a windowless building shaped like a concrete block located in an uninhabited desert. After years of complete isolation, a bell's chime awakens Nullem in the middle of the night. Nullem is no longer alone.",
-            "department": {
-                "_id": "63f19cfc0f6f179c878ec1bc",
-                "deptTitle": "Literature",
-                "deptDescription": "NuMuseum's Literature Department (LD) maintains a collection of written work including stories and poems. All items in the LD are from the 21st century. Officials at the LD identify works to add to the NuMuseum collection by investigating their contents. The items in the LD are in a mix of digital and hand-written formats. It is not possible to see hand-written items in person because they are stored in the NuMuseum private collection.",
-                "deptId": "2"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1ab220f6f179c878ec1fe",
-            "itemId": "1270011",
-            "title": "Monkey in PVC Pipe",
-            "artist": {
-                "_id": "63f199fd0f6f179c878ec1ab",
-                "artistName": "Standard PVC",
-                "artistBiography": "Standard PVC makes virtual abstact sculptures inspired by architectural forms. They are designed to look like they are made from different materials (eg PVC and bronze). There are plans to manufacture the works of Standard PVC based on their computer designs.",
-                "artistStart": "2022",
-                "artistMedium": [
-                    "Digital"
-                ]
-            },
-            "exhibit": "NuuPVC++",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/1270011.png",
-            "links": [],
-            "objectName": "Virtual Sculpture (PVC)",
-            "objectDate": "2022",
-            "medium": "Digital",
-            "dimensions": [],
-            "description": "The main highlight of the museum's virtual sculpture collection--Monkey in PVC Pipe--is an abstract sculpture designed to encourage viewers to think. Its title was inspired by the artist's sight of a monkey in a PVC pipe in an educational film. The title is connected to nothing about the sculpture other than the fact that it is a 'virtual PVC' sculpture.",
-            "department": {
-                "_id": "63f19d110f6f179c878ec1c1",
-                "deptTitle": "Virtual Sculpture",
-                "deptDescription": "NuMuseum's Virtual Sculpture Department (VSD) is responsible for the digital collection and storage of digital three-dimensional artworks. All works in the VPD are stored in the 3MF format. Each of the virtual sculptures is depicted in PNG and/or JPEG image format. Officials at the department are responsible for rendering and photographing the virtual sculptures with digital technology. Additions to the collection are made based on their quality and impact. All paintings are the property of NuMuseum.",
-                "deptId": "7"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        },
-        {
-            "_id": "63f1ac430f6f179c878ec205",
-            "itemId": "3520011",
-            "title": "Searching and Viewing the City",
-            "artist": {
-                "_id": "63f199b10f6f179c878ec1a7",
-                "artistName": "Minobbiane",
-                "artistBiography": "Minobbiane is a rabbit who likes to write stories and gets inpiration from the city in which it lives.",
-                "artistStart": "Circa 2009",
-                "artistMedium": [
-                    "Written"
-                ]
-            },
-            "exhibit": "",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/3520011.png",
-            "links": [],
-            "objectName": "Book",
-            "objectDate": "2020",
-            "medium": "Written",
-            "dimensions": [],
-            "description": "Pots--a gullible tourist elephant--wins a trip to New Duck (a large city). Residents of New Duck take advantage of Pots' gullible personality.",
-            "department": {
-                "_id": "63f19cfc0f6f179c878ec1bc",
-                "deptTitle": "Literature",
-                "deptDescription": "NuMuseum's Literature Department (LD) maintains a collection of written work including stories and poems. All items in the LD are from the 21st century. Officials at the LD identify works to add to the NuMuseum collection by investigating their contents. The items in the LD are in a mix of digital and hand-written formats. It is not possible to see hand-written items in person because they are stored in the NuMuseum private collection.",
-                "deptId": "2"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1ac8c0f6f179c878ec207",
-            "itemId": "3520021",
-            "title": "ChimeSounds",
-            "artist": {
-                "_id": "63f199b10f6f179c878ec1a7",
-                "artistName": "Minobbiane",
-                "artistBiography": "Minobbiane is a rabbit who likes to write stories and gets inpiration from the city in which it lives.",
-                "artistStart": "Circa 2009",
-                "artistMedium": [
-                    "Written"
-                ]
-            },
-            "exhibit": "",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/3520021.png",
-            "links": [],
-            "objectName": "Poem",
-            "objectDate": "2020",
-            "medium": "Written",
-            "dimensions": [],
-            "description": "This poem written in an unconventional format was inspired by the sound and art of the Delacorte Clock.",
-            "department": {
-                "_id": "63f19cfc0f6f179c878ec1bc",
-                "deptTitle": "Literature",
-                "deptDescription": "NuMuseum's Literature Department (LD) maintains a collection of written work including stories and poems. All items in the LD are from the 21st century. Officials at the LD identify works to add to the NuMuseum collection by investigating their contents. The items in the LD are in a mix of digital and hand-written formats. It is not possible to see hand-written items in person because they are stored in the NuMuseum private collection.",
-                "deptId": "2"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a5dd0f6f179c878ec1db",
-            "itemId": "2100011",
-            "title": "Delacorte Clock Simplified",
-            "artist": {
-                "_id": "63f199dd0f6f179c878ec1a9",
-                "artistName": "Quik the Artist",
-                "artistBiography": "Quik the Artist is a duck who thinks and draws in a two dimensional way. Quik the Artist resides in the dome of a tall and historical hotel building.",
-                "artistStart": "2020",
-                "artistMedium": [
-                    "Painting",
-                    "Digital"
-                ]
-            },
-            "exhibit": "",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/2100011.png",
-            "links": [],
-            "objectName": "Painting (B&W)",
-            "objectDate": "2023",
-            "medium": "Painting",
-            "dimensions": [
-                20,
-                30
-            ],
-            "description": "This is a simple black and white representation of the Delacorte Clock.",
-            "department": {
-                "_id": "63f19cf60f6f179c878ec1ba",
-                "deptTitle": "Painting",
-                "deptDescription": "NuMuseum's Painting Department (PD) is focused on physical paintings, drawings, illustrations and other forms of two-dimensional art made in the 21st century. Officials at the PD store, investigate, maintain and write about the works in the collection. It is currently not possible to see any items from the PD in person because they are stored in the NuMuseum private collection.",
-                "deptId": "0"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1ada30f6f179c878ec210",
-            "itemId": "2230011",
-            "title": "The Leathers",
-            "artist": {
-                "_id": "63f1997d0f6f179c878ec1a5",
-                "artistName": "Anonymous",
-                "artistBiography": "Anonymous artists/designers designed several items in the NuMuseum--most notably those in the clothing collection.",
-                "artistStart": "ND",
-                "artistMedium": [
-                    "Multiple"
-                ]
-            },
-            "exhibit": "Contemporary Clothing",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/2230011.png",
-            "links": [],
-            "objectName": "Pants",
-            "objectDate": "2022",
-            "medium": "Leather",
-            "dimensions": [
-                110,
-                30
-            ],
-            "description": "These contemporary pants make a powerful--almost jarring--impact.",
-            "department": {
-                "_id": "63f19cff0f6f179c878ec1bd",
-                "deptTitle": "Clothing",
-                "deptDescription": "NuMuseum's Clothing Department (CD) maintains a physical collection of rare, artistic and notable articles of clothing. Articles in the collection include dresses, pants, shirts and skirts. Officials at the CD do their best to ensure that the often rare or unconventional materials from which the collection items are made are not dirtied, damaged or torn. All items are in a private collection and used by the museum founder when travelling. Items may exit the collection occasionally because of reasons including fitting the museum founder poorly or being banned (eg for toxic scents) because of popular vote by museum officials.",
-                "deptId": "3"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1ad390f6f179c878ec20e",
-            "itemId": "2230001",
-            "title": "Rubber Suit (Black)",
-            "artist": {
-                "_id": "63f1997d0f6f179c878ec1a5",
-                "artistName": "Anonymous",
-                "artistBiography": "Anonymous artists/designers designed several items in the NuMuseum--most notably those in the clothing collection.",
-                "artistStart": "ND",
-                "artistMedium": [
-                    "Multiple"
-                ]
-            },
-            "exhibit": "Contemporary Clothing",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/2230001.png",
-            "links": [],
-            "objectName": "Poem",
-            "objectDate": "2022",
-            "medium": "Rubber",
-            "dimensions": [
-                90,
-                55
-            ],
-            "description": "This contemporary piece of artistic clothing is comprised of a shirt connected to pants. Its construction from an unconventional nonporous material--black rubber--increases its visual appeal.",
-            "department": {
-                "_id": "63f19cff0f6f179c878ec1bd",
-                "deptTitle": "Clothing",
-                "deptDescription": "NuMuseum's Clothing Department (CD) maintains a physical collection of rare, artistic and notable articles of clothing. Articles in the collection include dresses, pants, shirts and skirts. Officials at the CD do their best to ensure that the often rare or unconventional materials from which the collection items are made are not dirtied, damaged or torn. All items are in a private collection and used by the museum founder when travelling. Items may exit the collection occasionally because of reasons including fitting the museum founder poorly or being banned (eg for toxic scents) because of popular vote by museum officials.",
-                "deptId": "3"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        },
-        {
-            "_id": "63f1ae250f6f179c878ec212",
-            "itemId": "2230021",
-            "title": "Plastic Silhouettes (Clothing)",
-            "artist": {
-                "_id": "63f1997d0f6f179c878ec1a5",
-                "artistName": "Anonymous",
-                "artistBiography": "Anonymous artists/designers designed several items in the NuMuseum--most notably those in the clothing collection.",
-                "artistStart": "ND",
-                "artistMedium": [
-                    "Multiple"
-                ]
-            },
-            "exhibit": "Contemporary Clothing",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/NotInCollection.png",
-            "links": [],
-            "objectName": "Pants",
-            "objectDate": "2022",
-            "medium": "Rubber",
-            "dimensions": [
-                110,
-                30
-            ],
-            "description": "These beige modern pants were the inspiration of the name of the Plastic Silhouettes exhibit. They are also called the Plastic Pants. The ends of the legs increase in diameter and resemble trumpets.",
-            "department": {
-                "_id": "63f19cff0f6f179c878ec1bd",
-                "deptTitle": "Clothing",
-                "deptDescription": "NuMuseum's Clothing Department (CD) maintains a physical collection of rare, artistic and notable articles of clothing. Articles in the collection include dresses, pants, shirts and skirts. Officials at the CD do their best to ensure that the often rare or unconventional materials from which the collection items are made are not dirtied, damaged or torn. All items are in a private collection and used by the museum founder when travelling. Items may exit the collection occasionally because of reasons including fitting the museum founder poorly or being banned (eg for toxic scents) because of popular vote by museum officials.",
-                "deptId": "3"
-            },
-            "isPublicDomain": false,
-            "isFeatured": false
-        },
-        {
-            "_id": "63f1a5330f6f179c878ec1d9",
-            "itemId": "2100001",
-            "title": "Plastic Silhouettes: The Motion of a Strange Tree",
-            "artist": {
-                "_id": "63f199dd0f6f179c878ec1a9",
-                "artistName": "Quik the Artist",
-                "artistBiography": "Quik the Artist is a duck who thinks and draws in a two dimensional way. Quik the Artist resides in the dome of a tall and historical hotel building.",
-                "artistStart": "2020",
-                "artistMedium": [
-                    "Painting",
-                    "Digital"
-                ]
-            },
-            "exhibit": "Plastic Silhouettes",
-            "primaryImage": "https://correcthorsebatterystaple.onrender.com/2100001.png",
-            "links": [],
-            "objectName": "Painting (B&W)",
-            "objectDate": "2023",
-            "medium": "Painting",
-            "dimensions": [
-                24,
-                14.5
-            ],
-            "description": "This abstract artwork depicts the life cycle of an imaginary plastic tree.",
-            "department": {
-                "_id": "63f19cf60f6f179c878ec1ba",
-                "deptTitle": "Painting",
-                "deptDescription": "NuMuseum's Painting Department (PD) is focused on physical paintings, drawings, illustrations and other forms of two-dimensional art made in the 21st century. Officials at the PD store, investigate, maintain and write about the works in the collection. It is currently not possible to see any items from the PD in person because they are stored in the NuMuseum private collection.",
-                "deptId": "0"
-            },
-            "isPublicDomain": false,
-            "isFeatured": true
-        }
-    ]);
-    //Make default if no item card clicked
+    const [items, setItems] = (0, _react.useState)([]);
     const [selectedItem, setSelectedItem] = (0, _react.useState)(null);
+    (0, _react.useEffect)(function() {
+        fetch("https://rubbersuitleatherpantsspacesuit.onrender.com/collection").then(function(res) {
+            return res.json();
+        }).then(function(info) {
+            console.log("Info from json ", info);
+            setItems(info);
+        });
+    }, []);
     if (selectedItem) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemView.ItemView), {
         itemInfo: selectedItem,
         onBackClick: function() {
@@ -27816,15 +27172,29 @@ const MainView = function() {
         }
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 9,
+        lineNumber: 16,
         columnNumber: 16
     }, this);
     //Message for empty item array
     if (items.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "ITEM LIST IS BLANK"
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("marquee", {
+            behavior: "alternate",
+            scrollamount: "15",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Loading NuMuseum Collection"
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 20,
+                columnNumber: 69
+            }, this)
+        }, void 0, false, {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 20,
+            columnNumber: 21
+        }, this)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 13,
+        lineNumber: 20,
         columnNumber: 16
     }, this);
     //Return divs with cards if item array not empty
@@ -27837,17 +27207,17 @@ const MainView = function() {
                 }
             }, item.itemId, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 19,
+                lineNumber: 26,
                 columnNumber: 24
             }, this);
         })
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 17,
+        lineNumber: 24,
         columnNumber: 9
     }, this);
 };
-_s(MainView, "pDqQbxNqLXvkuuOmo5ZLI7t5K8I=");
+_s(MainView, "u7YA/nWvAr1G4oZqETFS2G2jXmA=");
 _c = MainView;
 exports.default = MainView;
 var _c;
@@ -28032,6 +27402,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ItemCard", ()=>ItemCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 const ItemCard = function({ onItemCardClick , itemInfo  }) {
     var { primaryImage , title , isFeatured  } = itemInfo;
     function featuredScan(featuredStatus) {
@@ -28048,12 +27420,12 @@ const ItemCard = function({ onItemCardClick , itemInfo  }) {
                     width: "150px"
                 }, void 0, false, {
                     fileName: "src/components/item-card/item-card.jsx",
-                    lineNumber: 10,
+                    lineNumber: 11,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/item-card/item-card.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28064,17 +27436,48 @@ const ItemCard = function({ onItemCardClick , itemInfo  }) {
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-card/item-card.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/item-card/item-card.jsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 13
     }, this);
 };
 _c = ItemCard;
+//Define requirements for ItemCard props
+ItemCard.propTypes = {
+    itemInfo: (0, _propTypesDefault.default).shape({
+        _id: (0, _propTypesDefault.default).string.isRequired,
+        itemId: (0, _propTypesDefault.default).string.isRequired,
+        title: (0, _propTypesDefault.default).string.isRequired,
+        artist: (0, _propTypesDefault.default).shape({
+            _id: (0, _propTypesDefault.default).string.isRequired,
+            artistName: (0, _propTypesDefault.default).string.isRequired,
+            artistBiography: (0, _propTypesDefault.default).string.isRequired,
+            artistStart: (0, _propTypesDefault.default).string.isRequired,
+            artistMedium: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired
+        }).isRequired,
+        exhibit: (0, _propTypesDefault.default).string.isRequired,
+        primaryImage: (0, _propTypesDefault.default).string.isRequired,
+        links: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired,
+        objectName: (0, _propTypesDefault.default).string.isRequired,
+        objectDate: (0, _propTypesDefault.default).string.isRequired,
+        medium: (0, _propTypesDefault.default).string.isRequired,
+        dimensions: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).number).isRequired,
+        department: (0, _propTypesDefault.default).shape({
+            _id: (0, _propTypesDefault.default).string.isRequired,
+            deptTitle: (0, _propTypesDefault.default).string.isRequired,
+            deptDescription: (0, _propTypesDefault.default).string.isRequired,
+            deptId: (0, _propTypesDefault.default).string.isRequired
+        }).isRequired,
+        isPublicDomain: (0, _propTypesDefault.default).bool.isRequired,
+        isFeatured: (0, _propTypesDefault.default).bool.isRequired
+    }).isRequired,
+    onItemCardClick: (0, _propTypesDefault.default).func.isRequired
+};
 var _c;
 $RefreshReg$(_c, "ItemCard");
 
@@ -28083,7 +27486,754 @@ $RefreshReg$(_c, "ItemCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"6v4mk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"7wKI2":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactIs = require("76b6bed84bc26c8");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("4d9259785fda3d26")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"76b6bed84bc26c8":"7EuwB","4d9259785fda3d26":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("9a43ab962822b45b");
+
+},{"9a43ab962822b45b":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("6bde3abbdb6fef3");
+var assign = require("e33b4337ee5144e7");
+var ReactPropTypesSecret = require("2f497ee3bb904a64");
+var has = require("aabdebc1045a2ae2");
+var checkPropTypes = require("b5599840c510079");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"6bde3abbdb6fef3":"7EuwB","e33b4337ee5144e7":"7OXxh","2f497ee3bb904a64":"jZTZJ","aabdebc1045a2ae2":"fqKuf","b5599840c510079":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
+        }
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("df6546ecd25a764f");
+var loggedTypeFailures = {};
+var has = require("911a18e7868e872d");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"df6546ecd25a764f":"jZTZJ","911a18e7868e872d":"fqKuf"}],"6v4mk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b908 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
