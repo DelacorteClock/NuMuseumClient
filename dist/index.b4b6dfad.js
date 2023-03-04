@@ -27152,19 +27152,31 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _itemCard = require("../item-card/item-card");
 var _itemView = require("../item-view/item-view");
+var _loginView = require("../login-view/login-view");
 var _s = $RefreshSig$();
 const MainView = function() {
     _s();
     const [items, setItems] = (0, _react.useState)([]);
     const [selectedItem, setSelectedItem] = (0, _react.useState)(null);
+    const [user, setUser] = (0, _react.useState)(null);
     (0, _react.useEffect)(function() {
         fetch("https://rubbersuitleatherpantsspacesuit.onrender.com/collection").then(function(res) {
             return res.json();
         }).then(function(info) {
-            console.log("Info from json ", info);
+            console.log("Info from json", info);
             setItems(info);
         });
     }, []);
+    //Force login if user not in
+    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+        onEntered: function(user) {
+            setUser(user);
+        }
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 19,
+        columnNumber: 16
+    }, this);
     if (selectedItem) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemView.ItemView), {
         itemInfo: selectedItem,
         onBackClick: function() {
@@ -27172,7 +27184,7 @@ const MainView = function() {
         }
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 16,
+        lineNumber: 22,
         columnNumber: 16
     }, this);
     //Message for empty item array
@@ -27184,17 +27196,17 @@ const MainView = function() {
                 children: "Loading NuMuseum Collection"
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 20,
+                lineNumber: 26,
                 columnNumber: 69
             }, this)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 20,
+            lineNumber: 26,
             columnNumber: 21
         }, this)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 20,
+        lineNumber: 26,
         columnNumber: 16
     }, this);
     //Return divs with cards if item array not empty
@@ -27207,17 +27219,17 @@ const MainView = function() {
                 }
             }, item.itemId, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 26,
+                lineNumber: 32,
                 columnNumber: 24
             }, this);
         })
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 24,
+        lineNumber: 30,
         columnNumber: 9
     }, this);
 };
-_s(MainView, "u7YA/nWvAr1G4oZqETFS2G2jXmA=");
+_s(MainView, "WvN54b2ymKInCpWF4Y2qZfJ6nvE=");
 _c = MainView;
 exports.default = MainView;
 var _c;
@@ -27228,7 +27240,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk"}],"9wLrc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk","../login-view/login-view":"9YtA0"}],"9wLrc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -28640,6 +28652,102 @@ $RefreshReg$(_c, "ItemView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const LoginView = function({ onEntered  }) {
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [code, setCode] = (0, _react.useState)("");
+    const hdlSubmit = function(evt) {
+        evt.preventDefault();
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/login?username=${username}&code=${code}`, {
+            method: "POST"
+        }).then(function(res) {
+            if (res.status === 200) onEntered(username);
+            else alert("SITE ENTRY FAILURE");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        onSubmit: hdlSubmit,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: [
+                    "Username",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        value: username,
+                        onChange: function(e) {
+                            setUsername(e.target.value);
+                        },
+                        placeholder: "Your Username"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 22,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 20,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: [
+                    "Code",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "password",
+                        value: code,
+                        onChange: function(e) {
+                            setCode(e.target.value);
+                        },
+                        placeholder: "CorrectHorseBatteryStaple"
+                    }, void 0, false, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 26,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 24,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                type: "submit",
+                children: "SUBMIT"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 28,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 19,
+        columnNumber: 13
+    }, this);
+};
+_s(LoginView, "q6KXVChdggm7qyX8PuRzBiME8MM=");
+_c = LoginView;
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
