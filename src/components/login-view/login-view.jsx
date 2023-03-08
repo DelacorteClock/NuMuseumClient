@@ -1,4 +1,6 @@
 import {React,useState} from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export const LoginView = function ({onEntered}) {
     const [username, setUsername] = useState('');
@@ -23,16 +25,16 @@ export const LoginView = function ({onEntered}) {
         });
     };
     return (
-            <form onSubmit={hdlSubmit}>
-                <label>
-                    Username
-                    <input type='text' value={username} onChange={function (e) {setUsername(e.target.value);}} placeholder='Your Username' pattern='\w{5,}' required />
-                </label>
-                <label>
-                    Code
-                    <input type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
-                </label>
-                <button type='submit'>SUBMIT</button>
-            </form>
+            <Form onSubmit={hdlSubmit}>
+                <Form.Group controlId='loginUsername'>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type='text' value={username} onChange={function (e) {setUsername(e.target.value);}} placeholder='Your Username' pattern='\w{5,}' required />
+                </Form.Group>
+                <Form.Group controlId='loginCode'>
+                    <Form.Label>Code</Form.Label>
+                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
+                </Form.Group>
+                <Button variant='primary' type='submit'>SUBMIT</Button>
+            </Form>
     );
 };

@@ -1,4 +1,7 @@
 import {React,useState} from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 export const RegistrationView = function () {
     //Required
     const [forename, setForename] = useState('');
@@ -37,32 +40,32 @@ export const RegistrationView = function () {
         });
     };
     return (
-        <form onSubmit={hdlSubmit}>
-                <label>
-                    Forename
-                    <input type='text' value={forename} onChange={function (e) {setForename(e.target.value);}} placeholder='Your Forename' pattern='[A-Za-z]{2,}' required />
-                </label>
-                <label>
-                    Surname
-                    <input type='text' value={surname} onChange={function (e) {setSurname(e.target.value);}} placeholder='Your Surname' pattern='[A-Za-z]{2,}' required />
-                </label>
-                <label>
-                    Email
-                    <input type='email' value={email} onChange={function (e) {setEmail(e.target.value);}} placeholder='Your Email' required />
-                </label>
-                <label>
-                    Username
-                    <input type='text' value={username} onChange={function (e) {setUsername(e.target.value);}} placeholder='Your Username' pattern='\w{5,}' required />
-                </label>
-                <label>
-                    Code
-                    <input type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
-                </label>
-                <label>
-                    (Optional) Birthday (dd mm)
-                    <input type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
-                </label>
-            <button type='submit'>SUBMIT</button>
-        </form>
+        <Form onSubmit={hdlSubmit}>
+                <Form.Group controlId='regForename'>
+                    <Form.Label>Forename</Form.Label>
+                    <Form.Control type='text' value={forename} onChange={function (e) {setForename(e.target.value);}} placeholder='Your Forename' pattern='[A-Za-z]{2,}' required />
+                </Form.Group>
+                <Form.Group controlId='regSurname'>
+                    <Form.Label>Surname</Form.Label>
+                    <Form.Control type='text' value={surname} onChange={function (e) {setSurname(e.target.value);}} placeholder='Your Surname' pattern='[A-Za-z]{2,}' required />
+                </Form.Group>
+                <Form.Group controlId='regEmail'>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type='email' value={email} onChange={function (e) {setEmail(e.target.value);}} placeholder='Your Email' required />
+                </Form.Group>
+                <Form.Group controlId='regUsername'>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type='text' value={username} onChange={function (e) {setUsername(e.target.value);}} placeholder='Your Username' pattern='\w{5,}' required />
+                </Form.Group>
+                <Form.Group controlId='regCode'>
+                    <Form.Label>Code</Form.Label>
+                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
+                </Form.Group>
+                <Form.Group controlId='regBirthday'>
+                    <Form.Label>(Optional) Birthday (dd mm)</Form.Label>
+                    <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
+                </Form.Group>
+            <Button variant='primary' type='submit'>SUBMIT</Button>
+        </Form>
     );
 };
