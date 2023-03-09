@@ -62,10 +62,10 @@ export const RegistrationView = function () {
                     <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
                 </Form.Group>
                 <Form.Group controlId='regBirthday'>
-                    <Form.Label>(Optional) Birthday (dd mm)</Form.Label>
+                    <Form.Label className='my-4'>(Optional) Birthday (dd mm)</Form.Label>
                     <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
                 </Form.Group>
-            <Button variant='primary' type='submit'>SUBMIT</Button>
+            <Button variant='primary' className='my-2' type='submit'>SUBMIT</Button>
         </Form>
     );
 };

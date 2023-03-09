@@ -2931,7 +2931,7 @@ var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
-var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
+//import 'bootstrap/dist/css/bootstrap.min.css';
 var _indexScss = require("./index.scss");
 const NuMuseumApp = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
@@ -2963,7 +2963,7 @@ $RefreshReg$(_c, "NuMuseumApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react-bootstrap/Container":"hEdsw","bootstrap/dist/css/bootstrap.min.css":"i5LP7"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react-bootstrap/Container":"hEdsw"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("e0b676b93830a014");
 
@@ -27262,7 +27262,7 @@ const MainView = function() {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                     children: items.map(function(item) {
                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                            className: "mb-4",
+                            className: "my-2",
                             lg: 3,
                             md: 4,
                             sm: 6,
@@ -27289,6 +27289,7 @@ const MainView = function() {
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                     variant: "primary",
+                    className: "my-4",
                     onClick: function() {
                         setUser(null);
                         setToken(null);
@@ -31022,6 +31023,7 @@ const LoginView = function({ onEntered  }) {
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
+                className: "my-2",
                 type: "submit",
                 children: "SUBMIT"
             }, void 0, false, {
@@ -31254,6 +31256,7 @@ const RegistrationView = function() {
                 controlId: "regBirthday",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        className: "my-4",
                         children: "(Optional) Birthday (dd mm)"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
@@ -31281,6 +31284,7 @@ const RegistrationView = function() {
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
+                className: "my-2",
                 type: "submit",
                 children: "SUBMIT"
             }, void 0, false, {
@@ -31305,6 +31309,6 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}],"i5LP7":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

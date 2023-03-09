@@ -41,8 +41,8 @@ const MainView = function () {
                     <Col md={10}><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></Col>
                 ) : (
                     <div>
-                        <Row>{items.map(function (item) {return <Col className='mb-4' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}</Row>
-                        <Button variant='primary' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
+                        <Row>{items.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}</Row>
+                        <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
                     </div>
             )}
             </Row>

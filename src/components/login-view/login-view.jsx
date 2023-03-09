@@ -34,7 +34,7 @@ export const LoginView = function ({onEntered}) {
                     <Form.Label>Code</Form.Label>
                     <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
                 </Form.Group>
-                <Button variant='primary' type='submit'>SUBMIT</Button>
+                <Button variant='primary' className='my-2' type='submit'>SUBMIT</Button>
             </Form>
     );
 };
