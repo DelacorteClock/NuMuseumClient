@@ -27257,28 +27257,36 @@ const MainView = function() {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 41,
             columnNumber: 21
-        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-            md: 10,
+        }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: [
-                items.map(function(item) {
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                        md: 2,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
-                            itemInfo: item,
-                            onItemCardClick: function(newItemSelection) {
-                                setSelectedItem(newItemSelection);
-                            }
-                        }, void 0, false, {
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                    children: items.map(function(item) {
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                            className: "mb-4",
+                            lg: 3,
+                            md: 4,
+                            sm: 6,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
+                                itemInfo: item,
+                                onItemCardClick: function(newItemSelection) {
+                                    setSelectedItem(newItemSelection);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 44,
+                                columnNumber: 126
+                            }, this)
+                        }, item.itemId, false, {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 44,
-                            columnNumber: 90
-                        }, this)
-                    }, item.itemId, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 44,
-                        columnNumber: 60
-                    }, this);
-                }),
+                            columnNumber: 65
+                        }, this);
+                    })
+                }, void 0, false, {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 44,
+                    columnNumber: 25
+                }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                     variant: "primary",
                     onClick: function() {
@@ -27498,6 +27506,7 @@ const ItemCard = function({ onItemCardClick , itemInfo  }) {
         if (featuredStatus) return "\uD83D\uDE05";
     }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+        className: "h-100",
         onClick: function() {
             onItemCardClick(itemInfo);
         },
@@ -27528,6 +27537,17 @@ const ItemCard = function({ onItemCardClick , itemInfo  }) {
                     }, void 0, false, {
                         fileName: "src/components/item-card/item-card.jsx",
                         lineNumber: 15,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                        variant: "secondary",
+                        onClick: function() {
+                            onItemCardClick(itemInfo);
+                        },
+                        children: "MORE INFO"
+                    }, void 0, false, {
+                        fileName: "src/components/item-card/item-card.jsx",
+                        lineNumber: 16,
                         columnNumber: 17
                     }, this)
                 ]

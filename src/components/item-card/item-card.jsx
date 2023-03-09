@@ -8,11 +8,12 @@ export const ItemCard = function ({onItemCardClick, itemInfo}) {
         }
     }
     return (
-        <Card onClick={function () {onItemCardClick(itemInfo);}}>
+        <Card className='h-100' onClick={function () {onItemCardClick(itemInfo);}}>
             <Card.Img variant='top' src={primaryImage} />
             <Card.Body>
                 <Card.Title>{title} {featuredScan(isFeatured)}</Card.Title>
                 <Card.Text>{artist.artistName}</Card.Text>
+                <Button variant='secondary' onClick={function () {onItemCardClick(itemInfo);}}>MORE INFO</Button>
             </Card.Body>
         </Card>
             );

@@ -40,10 +40,10 @@ const MainView = function () {
                 ) : items.length === 0 ? (
                     <Col md={10}><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></Col>
                 ) : (
-                    <Col md={10}>
-                        {items.map(function (item) {return <Col key={item.itemId} md={2}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}
+                    <div>
+                        <Row>{items.map(function (item) {return <Col className='mb-4' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}</Row>
                         <Button variant='primary' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
-                    </Col>
+                    </div>
             )}
             </Row>
             );
