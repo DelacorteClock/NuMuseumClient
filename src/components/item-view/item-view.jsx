@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 export const ItemView = function ({itemInfo, onBackClick}) {
     var {primaryImage, itemId, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured} = itemInfo;
     //Check whether or not to display dimensions
@@ -104,7 +105,7 @@ export const ItemView = function ({itemInfo, onBackClick}) {
                     {exhibitScan(exhibit)}
                     {pdScan(isPublicDomain)}
                 </div>
-                <button onClick={onBackClick}>BACK</button>
+                <Button variant='primary' onClick={onBackClick}>BACK</Button>
             </div>
             );
 };

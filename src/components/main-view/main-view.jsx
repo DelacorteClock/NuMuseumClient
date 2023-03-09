@@ -3,6 +3,10 @@ import {ItemCard} from '../item-card/item-card';
 import {ItemView} from '../item-view/item-view';
 import {LoginView} from '../login-view/login-view';
 import {RegistrationView} from '../registration-view/registration-view';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
 const MainView = function () {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     const storedToken = localStorage.getItem('token');
@@ -23,41 +27,25 @@ const MainView = function () {
             setItems(info);
         });
     }, [token]);
-    //Force login if user not in
-    if (!user) {
-        return (
-                <div>
-                    <LoginView onEntered={function (user, token) {
-                                    setUser(user);
-                                    setToken(token);
-                                           }} />
-                    or <RegistrationView />
-                </div>
-                );
-    }
-    if (selectedItem) {
-        return <ItemView itemInfo={selectedItem} onBackClick={function () {
-                        setSelectedItem(null);
-                              }} />;
-    }
-    //Message for empty item array
-    if (items.length === 0) {
-        return <div><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></div>;
-    }
-    //Return divs with cards if item array not empty
+    //Force login
     return (
-            <div>
-                {items.map(function (item) {
-                                return <ItemCard key={item.itemId} itemInfo={item} onItemCardClick={function (newItemSelection) {
-                                                                setSelectedItem(newItemSelection);
-                                                                      }} />;
-                            })}
-                <button onClick={function () {
-                        setUser(null);
-                        setToken(null);
-                        localStorage.clear();
-                            }}>LOGOUT</button>
-            </div>
+            <Row className='justify-content-md-center'>
+                {!user ? (
+                    <Col md={5}>
+                        <LoginView onEntered={function (user, token) {setUser(user); setToken(token); }} />
+                        or <RegistrationView />
+                    </Col>
+                ) : selectedItem ? (
+                    <Col md={10}><ItemView itemInfo={selectedItem} onBackClick={function () {setSelectedItem(null);}} /></Col>
+                ) : items.length === 0 ? (
+                    <Col md={10}><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></Col>
+                ) : (
+                    <Col md={10}>
+                        {items.map(function (item) {return <Col key={item.itemId} md={2}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}
+                        <Button variant='primary' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
+                    </Col>
+            )}
+            </Row>
             );
 };
 

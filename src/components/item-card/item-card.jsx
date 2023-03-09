@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
-export const ItemCard = function ({onItemCardClick,itemInfo}) {
-    var {primaryImage, title, isFeatured} = itemInfo;
+import {Button, Card} from 'react-bootstrap';
+export const ItemCard = function ({onItemCardClick, itemInfo}) {
+    var {artist, primaryImage, title, isFeatured} = itemInfo;
     function featuredScan(featuredStatus) {
         if (featuredStatus) {
             return '\u{1F605}';
         }
     }
     return (
-            <div onClick={function () {onItemCardClick(itemInfo);}}>
-                <div><img src={primaryImage} width='150px' /></div>
-                <div>{title} {featuredScan(isFeatured)}</div>
-            </div>
+        <Card onClick={function () {onItemCardClick(itemInfo);}}>
+            <Card.Img variant='top' src={primaryImage} />
+            <Card.Body>
+                <Card.Title>{title} {featuredScan(isFeatured)}</Card.Title>
+                <Card.Text>{artist.artistName}</Card.Text>
+            </Card.Body>
+        </Card>
             );
 };
 
