@@ -6,12 +6,12 @@ import {RegistrationView} from '../registration-view/registration-view';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 const MainView = function () {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     const storedToken = localStorage.getItem('token');
     const [items, setItems] = useState([]);
-    const [selectedItem, setSelectedItem] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     useEffect(function () {
@@ -29,24 +29,48 @@ const MainView = function () {
     }, [token]);
     //Force login
     return (
-            <Row className='justify-content-md-center'>
-                {!user ? (
-                    <Col md={5}>
-                        <LoginView onEntered={function (user, token) {setUser(user); setToken(token); }} />
-                        or <RegistrationView />
-                    </Col>
-                ) : selectedItem ? (
-                    <Col md={10}><ItemView itemInfo={selectedItem} onBackClick={function () {setSelectedItem(null);}} /></Col>
-                ) : items.length === 0 ? (
-                    <Col md={10}><marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee></Col>
-                ) : (
-                    <div>
-                        <Row>{items.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} onItemCardClick={function (newItemSelection) {setSelectedItem(newItemSelection);}} /></Col>;})}</Row>
-                        <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
-                    </div>
-            )}
-            </Row>
+            <BrowserRouter>
+                <Row className='justify-content-md-center'>
+                    <Routes>
+                        <Route path='/registration' element={<div>{user ? (<Navigate to='/' />) : (<Col md={5}><RegistrationView /></Col>)}</div>} />
+                        <Route path='/login' element={<div>
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <Col md={5}>
+                                    <LoginView onEntered={function (user, token) {setUser(user); setToken(token); }} />
+                                </Col>
+                            )}
+                        </div>} />
+                        <Route path='/items/:itemId' element={<div>
+                            {!user ? (
+                                <Navigate to='/login' replace />
+                            ) : items.length === 0 ? (
+                                <Col md={10}>
+                                    <marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee>
+                                </Col>
+                            ) : (
+                                <Col md={10}><ItemView items={items} /></Col>
+                            )}
+                        </div>} />
+                        <Route path='/' element={<div>
+                            {!user ? (
+                                <Navigate to='/login' replace />
+                            ) : items.length === 0 ? (
+                                <Col md={10}>
+                                    <marquee behavior='alternate' scrollamount='15'><h1>Loading NuMuseum Collection</h1></marquee>
+                                </Col>
+                            ) : (
+                                <div>
+                                    <Row>{items.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} /></Col>;})}</Row>
+                                    <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
+                                </div>
+                            )}
+                        </div>} />
+                    </Routes>
+                </Row>
+            </BrowserRouter>
             );
-};
-
+    };
+    
 export default MainView;

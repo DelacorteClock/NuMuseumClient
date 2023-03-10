@@ -1,6 +1,11 @@
+import {useParams} from 'react-router';
+import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-export const ItemView = function ({itemInfo, onBackClick}) {
-    var {primaryImage, itemId, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured} = itemInfo;
+
+export const ItemView = function ({items}) {
+    var {itemId} = useParams();
+    const itemInfo = items.find(function (i) {return i.itemId === itemId;});
+    var {primaryImage, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured} = itemInfo;
     //Check whether or not to display dimensions
     function dimensionScan(dimensionArray) {
         if (dimensionArray.length === 0) {
@@ -105,7 +110,7 @@ export const ItemView = function ({itemInfo, onBackClick}) {
                     {exhibitScan(exhibit)}
                     {pdScan(isPublicDomain)}
                 </div>
-                <Button variant='primary' onClick={onBackClick}>BACK</Button>
+                <Link to='/'><Button variant='primary'>BACK</Button></Link>
             </div>
             );
 };

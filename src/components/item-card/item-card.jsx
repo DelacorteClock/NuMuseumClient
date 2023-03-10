@@ -1,19 +1,22 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Card} from 'react-bootstrap';
-export const ItemCard = function ({onItemCardClick, itemInfo}) {
-    var {artist, primaryImage, title, isFeatured} = itemInfo;
+import {Link} from 'react-router-dom';
+
+export const ItemCard = function ({itemInfo}) {
+    var {artist, primaryImage, title, isFeatured, itemId} = itemInfo;
     function featuredScan(featuredStatus) {
         if (featuredStatus) {
             return '\u{1F605}';
         }
     }
     return (
-        <Card className='h-100' onClick={function () {onItemCardClick(itemInfo);}}>
+        <Card className='h-100'>
             <Card.Img variant='top' src={primaryImage} />
             <Card.Body>
                 <Card.Title>{title} {featuredScan(isFeatured)}</Card.Title>
                 <Card.Text>{artist.artistName}</Card.Text>
-                <Button variant='secondary' onClick={function () {onItemCardClick(itemInfo);}}>MORE INFO</Button>
+                <Link to={`/items/${encodeURIComponent(itemId)}`}><Button variant='secondary'>MORE INFO</Button></Link>
             </Card.Body>
         </Card>
             );
