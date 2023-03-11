@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {ItemCard} from '../item-card/item-card';
 import {ItemView} from '../item-view/item-view';
 import {LoginView} from '../login-view/login-view';
+import {ProfileView} from '../profile-view/profile-view';
 import {RegistrationView} from '../registration-view/registration-view';
 import {NavigationBar} from '../navigation-bar/navigation-bar';
 import {Row, Col, Button} from 'react-bootstrap';
@@ -57,6 +58,13 @@ const MainView = function () {
                                 </Col>
                             ) : (
                                 <Col md={10}><ItemView items={items} /></Col>
+                            )}
+                        </div>} />
+                        <Route path='/profile' element={<div>
+                            {!user ? (
+                                <Navigate to='/login' replace />
+                            ) : (
+                                <ProfileView />
                             )}
                         </div>} />
                         <Route path='/' element={<div>

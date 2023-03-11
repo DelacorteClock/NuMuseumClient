@@ -68,7 +68,7 @@ export const ItemView = function ({items}) {
     }
     return (
             <div>
-                <div><img src={primaryImage} width='300px' /></div>
+                <div><img src={primaryImage} width='300px' className='mt-2' /></div>
                 <div>
                     <span>{title}</span>
                     <span> by </span>

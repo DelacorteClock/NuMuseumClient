@@ -16,7 +16,7 @@ export const ItemCard = function ({itemInfo}) {
             <Card.Body>
                 <Card.Title>{title} {featuredScan(isFeatured)}</Card.Title>
                 <Card.Text>{artist.artistName}</Card.Text>
-                <Link to={`/items/${encodeURIComponent(itemId)}`}><Button variant='secondary'>MORE INFO</Button></Link>
+                <Link to={`/items/${encodeURIComponent(itemId)}`}><Button variant='secondary' className='text-white'>MORE INFO</Button></Link>
             </Card.Body>
         </Card>
             );

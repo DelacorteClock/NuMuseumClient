@@ -37,7 +37,7 @@ export const LoginView = function ({onEntered}) {
                         <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='Your Code' minLength='10' required />
                     </Form.Group>
                     <div class='btn-group'>
-                        <Button variant='primary' className='my-2' type='submit'>SUBMIT</Button>
+                        <Button variant='primary' className='my-2' type='submit'>DONE</Button>
                         <Link as={Link} to='/registration'>
                             <Button variant='secondary text-white' className='m-2' type='submit'>NEW USER</Button>
                         </Link>

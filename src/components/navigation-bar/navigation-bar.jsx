@@ -18,7 +18,7 @@ export const NavigationBar = function ({user, onExited}) {
                         {user && (
                             <div>
                                 <Nav.Link as={Link} to='/'>Collection</Nav.Link>
-                                <Nav.Link as={Link} to='/registration'>TheProfiler</Nav.Link>
+                                <Nav.Link as={Link} to='/profile'>Profile</Nav.Link>
                                 <Nav.Link onClick={onExited}>Sign Out</Nav.Link>
                             </div>
                         )}
