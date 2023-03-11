@@ -3,9 +3,8 @@ import {ItemCard} from '../item-card/item-card';
 import {ItemView} from '../item-view/item-view';
 import {LoginView} from '../login-view/login-view';
 import {RegistrationView} from '../registration-view/registration-view';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {NavigationBar} from '../navigation-bar/navigation-bar';
+import {Row, Col, Button} from 'react-bootstrap';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 const MainView = function () {
@@ -30,9 +29,16 @@ const MainView = function () {
     //Force login
     return (
             <BrowserRouter>
+                <NavigationBar user={user} onExited={function () {setUser(null); setToken(null); localStorage.clear();}} />
                 <Row className='justify-content-md-center'>
                     <Routes>
-                        <Route path='/registration' element={<div>{user ? (<Navigate to='/' />) : (<Col md={5}><RegistrationView /></Col>)}</div>} />
+                        <Route path='/registration' element={<div>
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <Col md={5}><RegistrationView /></Col>
+                            )}
+                        </div>} />
                         <Route path='/login' element={<div>
                             {user ? (
                                 <Navigate to='/' />
@@ -63,7 +69,7 @@ const MainView = function () {
                             ) : (
                                 <div>
                                     <Row>{items.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} /></Col>;})}</Row>
-                                    <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>LOGOUT</Button>
+                                    <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>SIGNOUT</Button>
                                 </div>
                             )}
                         </div>} />

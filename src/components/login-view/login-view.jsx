@@ -32,7 +32,7 @@ export const LoginView = function ({onEntered}) {
                 </Form.Group>
                 <Form.Group controlId='loginCode'>
                     <Form.Label>Code</Form.Label>
-                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
+                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='Your Code' minLength='10' required />
                 </Form.Group>
                 <Button variant='primary' className='my-2' type='submit'>SUBMIT</Button>
             </Form>

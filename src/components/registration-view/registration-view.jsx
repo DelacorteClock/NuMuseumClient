@@ -59,7 +59,7 @@ export const RegistrationView = function () {
                 </Form.Group>
                 <Form.Group controlId='regCode'>
                     <Form.Label>Code</Form.Label>
-                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='CorrectHorseBatteryStaple' minLength='10' required />
+                    <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='Your Code' minLength='10' required />
                 </Form.Group>
                 <Form.Group controlId='regBirthday'>
                     <Form.Label className='my-4'>(Optional) Birthday (dd mm)</Form.Label>
