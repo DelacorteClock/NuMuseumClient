@@ -3,6 +3,7 @@ import {ItemCard} from '../item-card/item-card';
 import {ItemView} from '../item-view/item-view';
 import {LoginView} from '../login-view/login-view';
 import {ProfileView} from '../profile-view/profile-view';
+import {ProfileEditView} from '../profile-edit-view/profile-edit-view';
 import {RegistrationView} from '../registration-view/registration-view';
 import {NavigationBar} from '../navigation-bar/navigation-bar';
 import {Row, Col, Button} from 'react-bootstrap';
@@ -63,14 +64,14 @@ const MainView = function () {
                             {!user ? (
                                 <Navigate to='/login' replace />
                             ) : (
-                                <ProfileView items={items} />
+                                <Col md={10}><ProfileView items={items} /></Col>
                             )}
                         </div>} />
                         <Route path='/profile/edit' element={<div>
                             {!user ? (
                                 <Navigate to='/login' replace />
                             ) : (
-                                <ProfileView items={items} />
+                                <Col md={5}><ProfileEditView /></Col>
                             )}
                         </div>} />
                         <Route path='/' element={<div>

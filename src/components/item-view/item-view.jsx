@@ -199,7 +199,7 @@ export const ItemView = function ({items}) {
                 </div>
                 <div className='btn-group'>
                     <Link to='/'>
-                        <Button variant='primary' className='my-2'>BACK</Button>
+                        <Button variant='primary' className='my-2'>VIEW FULL COLLECTION</Button>
                     </Link>
                     <Button variant='secondary text-white' className='m-2' onClick={function () {statusSwitcher(_id);}}>{buttonText}</Button>
                 </div>
