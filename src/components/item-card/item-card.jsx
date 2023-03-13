@@ -51,5 +51,5 @@ ItemCard.propTypes = {
         isPublicDomain: PropTypes.bool.isRequired,
         isFeatured: PropTypes.bool.isRequired
     }).isRequired,
-    onItemCardClick: PropTypes.func.isRequired
+    onItemCardClick: PropTypes.func
 };

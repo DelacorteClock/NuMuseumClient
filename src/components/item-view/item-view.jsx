@@ -5,7 +5,94 @@ import Button from 'react-bootstrap/Button';
 export const ItemView = function ({items}) {
     var {itemId} = useParams();
     const itemInfo = items.find(function (i) {return i.itemId === itemId;});
-    var {primaryImage, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured} = itemInfo;
+    var {primaryImage, title, artist, exhibit, objectName, objectDate, medium, dimensions, description, department, isPublicDomain, isFeatured, _id} = itemInfo;
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedToken = localStorage.getItem('token');
+    //Check favourite status
+    function statusScanner(i) {
+        var idArray = [];
+        storedUser.userFavourites.forEach(function (i) {idArray.push(i._id);});
+        var loc = idArray.indexOf(i);
+        console.log(loc);
+        console.log(idArray);
+        if (loc > -1) {
+            return 'REMOVE FAVOURITE';
+        } else {
+            return 'ADD FAVOURITE';
+        }
+    }
+    const buttonText = statusScanner(_id);
+    //Switch favourite status
+    function statusSwitcher(i) {
+        var idArray = [];
+        storedUser.userFavourites.forEach(function (i) {idArray.push(i._id);});
+        var loc = idArray.indexOf(i);
+        console.log(loc);
+        console.log(idArray);
+        if (loc > -1) {
+            favItemRemove(i);
+        } else {
+            favItemAdd(i);
+        }
+    }
+    //Function for favourite item removal
+    function favItemRemove(i) {
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/favitem/${i}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        }).then(function (res) {
+            if (res.status === 200) {
+                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${storedToken}`
+                    }
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (info) {
+                    console.log(info);
+                    localStorage.setItem('user', JSON.stringify(info));
+                    var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
+                    speechSynthesis.speak(notify);
+                    alert(`FAVOURITE ITEM \u00AB${title}\u00BB REMOVED`);
+                    window.location.reload();
+                });
+            } else {
+                alert('SITE ERROR OCCURRED');
+            }
+        });
+    }
+    function favItemAdd(i) {
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/favitem/${i}`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        }).then(function (res) {
+            if (res.status === 200) {
+                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${storedToken}`
+                    }
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (info) {
+                    console.log(info);
+                    localStorage.setItem('user', JSON.stringify(info));
+                    var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
+                    speechSynthesis.speak(notify);
+                    alert(`FAVOURITE ITEM \u00AB${title}\u00BB ADDED`);
+                    window.location.reload();
+                });
+            } else {
+                alert('SITE ERROR OCCURRED');
+            }
+        });
+    }
+    
     //Check whether or not to display dimensions
     function dimensionScan(dimensionArray) {
         if (dimensionArray.length === 0) {
@@ -110,7 +197,12 @@ export const ItemView = function ({items}) {
                     {exhibitScan(exhibit)}
                     {pdScan(isPublicDomain)}
                 </div>
-                <Link to='/'><Button variant='primary'>BACK</Button></Link>
+                <div className='btn-group'>
+                    <Link to='/'>
+                        <Button variant='primary' className='my-2'>BACK</Button>
+                    </Link>
+                    <Button variant='secondary text-white' className='m-2' onClick={function () {statusSwitcher(_id);}}>{buttonText}</Button>
+                </div>
             </div>
             );
 };

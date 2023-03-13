@@ -23,7 +23,6 @@ const MainView = function () {
         }).then(function (res) {
             return res.json();
         }).then(function (info) {
-            console.log('Info from json', info);
             setItems(info);
         });
     }, [token]);
@@ -64,7 +63,14 @@ const MainView = function () {
                             {!user ? (
                                 <Navigate to='/login' replace />
                             ) : (
-                                <ProfileView />
+                                <ProfileView items={items} />
+                            )}
+                        </div>} />
+                        <Route path='/profile/edit' element={<div>
+                            {!user ? (
+                                <Navigate to='/login' replace />
+                            ) : (
+                                <ProfileView items={items} />
                             )}
                         </div>} />
                         <Route path='/' element={<div>
@@ -77,7 +83,6 @@ const MainView = function () {
                             ) : (
                                 <div>
                                     <Row>{items.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} /></Col>;})}</Row>
-                                    <Button variant='primary' className='my-4' onClick={function () {setUser(null); setToken(null); localStorage.clear();}}>SIGNOUT</Button>
                                 </div>
                             )}
                         </div>} />

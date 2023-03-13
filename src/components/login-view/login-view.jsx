@@ -13,7 +13,7 @@ export const LoginView = function ({onEntered}) {
         }).then(function (res) {
             return res.json();
         }).then(function (info) {
-            console.log('SPACESUIT SYSTEM RESPONSE',info);
+            console.log('SPACESUIT SYSTEM RESPONSE', info);
             if (info.user) {
                 localStorage.setItem('user', JSON.stringify(info.user));
                 localStorage.setItem('token', info.token);
@@ -36,10 +36,10 @@ export const LoginView = function ({onEntered}) {
                         <Form.Label>Code</Form.Label>
                         <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='Your Code' minLength='10' required />
                     </Form.Group>
-                    <div class='btn-group'>
+                    <div className='btn-group'>
                         <Button variant='primary' className='my-2' type='submit'>DONE</Button>
                         <Link as={Link} to='/registration'>
-                            <Button variant='secondary text-white' className='m-2' type='submit'>NEW USER</Button>
+                            <Button variant='secondary text-white' className='m-2'>NEW USER</Button>
                         </Link>
                     </div>
                 </Form>

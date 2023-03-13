@@ -66,10 +66,10 @@ export const RegistrationView = function () {
                     <Form.Label className='my-4'>(Optional) Birthday (dd mm)</Form.Label>
                     <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
                 </Form.Group>
-                <div class='btn-group'>
+                <div className='btn-group'>
                     <Button variant='primary' className='my-2' type='submit'>DONE</Button>
                     <Link as={Link} to='/login'>
-                        <Button variant='secondary text-white' className='m-2' type='submit'>EXISTING USER</Button>
+                        <Button variant='secondary text-white' className='m-2'>EXISTING USER</Button>
                     </Link>
                 </div>
         </Form>

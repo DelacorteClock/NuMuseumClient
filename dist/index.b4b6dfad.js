@@ -27184,7 +27184,6 @@ const MainView = function() {
         }).then(function(res) {
             return res.json();
         }).then(function(info) {
-            console.log("Info from json", info);
             setItems(info);
         });
     }, [
@@ -27202,7 +27201,7 @@ const MainView = function() {
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 33,
+                lineNumber: 32,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27221,7 +27220,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 36,
+                            lineNumber: 35,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27241,7 +27240,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 43,
+                            lineNumber: 42,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27268,7 +27267,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 52,
+                            lineNumber: 51,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27277,11 +27276,28 @@ const MainView = function() {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
                                     replace: true
-                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {}, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
+                                    items: items
+                                }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 63,
+                            lineNumber: 62,
+                            columnNumber: 25
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/profile/edit",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
+                                    items: items
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 69,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27300,53 +27316,41 @@ const MainView = function() {
                                         }, void 0, false, void 0, void 0)
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                                            children: items.map(function(item) {
-                                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                                    className: "my-2",
-                                                    lg: 3,
-                                                    md: 4,
-                                                    sm: 6,
-                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
-                                                        itemInfo: item
-                                                    }, void 0, false, void 0, void 0)
-                                                }, item.itemId, false, void 0, void 0);
-                                            })
-                                        }, void 0, false, void 0, void 0),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                            variant: "primary",
-                                            className: "my-4",
-                                            onClick: function() {
-                                                setUser(null);
-                                                setToken(null);
-                                                localStorage.clear();
-                                            },
-                                            children: "SIGNOUT"
-                                        }, void 0, false, void 0, void 0)
-                                    ]
-                                }, void 0, true, void 0, void 0)
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                                        children: items.map(function(item) {
+                                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                                className: "my-2",
+                                                lg: 3,
+                                                md: 4,
+                                                sm: 6,
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
+                                                    itemInfo: item
+                                                }, void 0, false, void 0, void 0)
+                                            }, item.itemId, false, void 0, void 0);
+                                        })
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 70,
+                            lineNumber: 76,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 35,
+                    lineNumber: 34,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 34,
+                lineNumber: 33,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 32,
+        lineNumber: 31,
         columnNumber: 13
     }, this);
 };
@@ -27361,7 +27365,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk","../login-view/login-view":"9YtA0","../registration-view/registration-view":"3U8r7","../navigation-bar/navigation-bar":"bsPVM","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","../profile-view/profile-view":"2vVqf"}],"9wLrc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk","../login-view/login-view":"9YtA0","../profile-view/profile-view":"2vVqf","../registration-view/registration-view":"3U8r7","../navigation-bar/navigation-bar":"bsPVM","react-bootstrap":"3AD9A","react-router-dom":"9xmpe"}],"9wLrc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27636,7 +27640,7 @@ ItemCard.propTypes = {
         isPublicDomain: (0, _propTypesDefault.default).bool.isRequired,
         isFeatured: (0, _propTypesDefault.default).bool.isRequired
     }).isRequired,
-    onItemCardClick: (0, _propTypesDefault.default).func.isRequired
+    onItemCardClick: (0, _propTypesDefault.default).func
 };
 var _c;
 $RefreshReg$(_c, "ItemCard");
@@ -39572,7 +39576,85 @@ const ItemView = function({ items  }) {
     const itemInfo = items.find(function(i) {
         return i.itemId === itemId;
     });
-    var { primaryImage , title , artist , exhibit , objectName , objectDate , medium , dimensions , description , department , isPublicDomain , isFeatured  } = itemInfo;
+    var { primaryImage , title , artist , exhibit , objectName , objectDate , medium , dimensions , description , department , isPublicDomain , isFeatured , _id  } = itemInfo;
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    //Check favourite status
+    function statusScanner(i) {
+        var idArray = [];
+        storedUser.userFavourites.forEach(function(i) {
+            idArray.push(i._id);
+        });
+        var loc = idArray.indexOf(i);
+        console.log(loc);
+        console.log(idArray);
+        if (loc > -1) return "REMOVE FAVOURITE";
+        else return "ADD FAVOURITE";
+    }
+    const buttonText = statusScanner(_id);
+    //Switch favourite status
+    function statusSwitcher(i) {
+        var idArray = [];
+        storedUser.userFavourites.forEach(function(i) {
+            idArray.push(i._id);
+        });
+        var loc = idArray.indexOf(i);
+        console.log(loc);
+        console.log(idArray);
+        if (loc > -1) favItemRemove(i);
+        else favItemAdd(i);
+    }
+    //Function for favourite item removal
+    function favItemRemove(i) {
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/favitem/${i}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        }).then(function(res) {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${storedToken}`
+                }
+            }).then(function(res) {
+                return res.json();
+            }).then(function(info) {
+                console.log(info);
+                localStorage.setItem("user", JSON.stringify(info));
+                var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
+                speechSynthesis.speak(notify);
+                alert(`FAVOURITE ITEM \u00AB${title}\u00BB REMOVED`);
+                window.location.reload();
+            });
+            else alert("SITE ERROR OCCURRED");
+        });
+    }
+    function favItemAdd(i) {
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/favitem/${i}`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        }).then(function(res) {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${storedToken}`
+                }
+            }).then(function(res) {
+                return res.json();
+            }).then(function(info) {
+                console.log(info);
+                localStorage.setItem("user", JSON.stringify(info));
+                var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
+                speechSynthesis.speak(notify);
+                alert(`FAVOURITE ITEM \u00AB${title}\u00BB ADDED`);
+                window.location.reload();
+            });
+            else alert("SITE ERROR OCCURRED");
+        });
+    }
     //Check whether or not to display dimensions
     function dimensionScan(dimensionArray) {
         if (dimensionArray.length === 0) return;
@@ -39582,7 +39664,7 @@ const ItemView = function({ items  }) {
                     children: "Dimensions: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 16,
+                    lineNumber: 103,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -39594,13 +39676,13 @@ const ItemView = function({ items  }) {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 17,
+                    lineNumber: 104,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 15,
+            lineNumber: 102,
             columnNumber: 21
         }, this);
         else if (dimensionArray.length === 3) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39609,7 +39691,7 @@ const ItemView = function({ items  }) {
                     children: "Dimensions: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 23,
+                    lineNumber: 110,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -39623,13 +39705,13 @@ const ItemView = function({ items  }) {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 24,
+                    lineNumber: 111,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 22,
+            lineNumber: 109,
             columnNumber: 21
         }, this);
         else //A single dimension array should not exist
@@ -39643,20 +39725,20 @@ const ItemView = function({ items  }) {
                     children: "Exhibit: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 37,
+                    lineNumber: 124,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: exhibitName
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 38,
+                    lineNumber: 125,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 36,
+            lineNumber: 123,
             columnNumber: 21
         }, this);
         else console.log("NO EXHIBIT FOR " + itemId);
@@ -39673,20 +39755,20 @@ const ItemView = function({ items  }) {
                     children: "Status: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 56,
+                    lineNumber: 143,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: "In public domain"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 57,
+                    lineNumber: 144,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 55,
+            lineNumber: 142,
             columnNumber: 21
         }, this);
         else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39695,20 +39777,20 @@ const ItemView = function({ items  }) {
                     children: "Status: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 63,
+                    lineNumber: 150,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: "Not in public domain"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 64,
+                    lineNumber: 151,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 62,
+            lineNumber: 149,
             columnNumber: 21
         }, this);
     }
@@ -39721,12 +39803,12 @@ const ItemView = function({ items  }) {
                     className: "mt-2"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 71,
+                    lineNumber: 158,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 71,
+                lineNumber: 158,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39735,41 +39817,41 @@ const ItemView = function({ items  }) {
                         children: title
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 73,
+                        lineNumber: 160,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: " by "
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 74,
+                        lineNumber: 161,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: artist.artistName
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 75,
+                        lineNumber: 162,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: " "
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 76,
+                        lineNumber: 163,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: featuredScan(isFeatured)
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 77,
+                        lineNumber: 164,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 72,
+                lineNumber: 159,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39778,20 +39860,20 @@ const ItemView = function({ items  }) {
                         children: "ABOUT THIS WORK"
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 80,
+                        lineNumber: 167,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: description
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 81,
+                        lineNumber: 168,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 79,
+                lineNumber: 166,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39800,7 +39882,7 @@ const ItemView = function({ items  }) {
                         children: "ITEM FACTS"
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 84,
+                        lineNumber: 171,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39809,20 +39891,20 @@ const ItemView = function({ items  }) {
                                 children: "Item ID: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 86,
+                                lineNumber: 173,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: itemId
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 87,
+                                lineNumber: 174,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 85,
+                        lineNumber: 172,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39831,20 +39913,20 @@ const ItemView = function({ items  }) {
                                 children: "Artist: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 90,
+                                lineNumber: 177,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: artist.artistName
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 91,
+                                lineNumber: 178,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 89,
+                        lineNumber: 176,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39853,20 +39935,20 @@ const ItemView = function({ items  }) {
                                 children: "Year Created: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 94,
+                                lineNumber: 181,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: objectDate
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 95,
+                                lineNumber: 182,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 93,
+                        lineNumber: 180,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39875,20 +39957,20 @@ const ItemView = function({ items  }) {
                                 children: "Department: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 98,
+                                lineNumber: 185,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: department.deptTitle
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 99,
+                                lineNumber: 186,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 97,
+                        lineNumber: 184,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39897,20 +39979,20 @@ const ItemView = function({ items  }) {
                                 children: "Medium: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 102,
+                                lineNumber: 189,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: medium
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 103,
+                                lineNumber: 190,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 101,
+                        lineNumber: 188,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39919,20 +40001,20 @@ const ItemView = function({ items  }) {
                                 children: "Type: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 106,
+                                lineNumber: 193,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: objectName
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 107,
+                                lineNumber: 194,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 105,
+                        lineNumber: 192,
                         columnNumber: 21
                     }, this),
                     dimensionScan(dimensions),
@@ -39941,28 +40023,50 @@ const ItemView = function({ items  }) {
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 83,
+                lineNumber: 170,
                 columnNumber: 17
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                to: "/",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    variant: "primary",
-                    children: "BACK"
-                }, void 0, false, {
-                    fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 113,
-                    columnNumber: 30
-                }, this)
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "btn-group",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            variant: "primary",
+                            className: "my-2",
+                            children: "BACK"
+                        }, void 0, false, {
+                            fileName: "src/components/item-view/item-view.jsx",
+                            lineNumber: 202,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 201,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                        variant: "secondary text-white",
+                        className: "m-2",
+                        onClick: function() {
+                            statusSwitcher(_id);
+                        },
+                        children: buttonText
+                    }, void 0, false, {
+                        fileName: "src/components/item-view/item-view.jsx",
+                        lineNumber: 204,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 113,
+                lineNumber: 200,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/item-view/item-view.jsx",
-        lineNumber: 70,
+        lineNumber: 157,
         columnNumber: 13
     }, this);
 };
@@ -40084,7 +40188,7 @@ const LoginView = function({ onEntered  }) {
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    class: "btn-group",
+                    className: "btn-group",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                             variant: "primary",
@@ -40102,7 +40206,6 @@ const LoginView = function({ onEntered  }) {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                 variant: "secondary text-white",
                                 className: "m-2",
-                                type: "submit",
                                 children: "NEW USER"
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
@@ -40142,7 +40245,233 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"3U8r7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"2vVqf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3c12.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+var _itemCard = require("../item-card/item-card");
+var _s = $RefreshSig$();
+const ProfileView = function({ items  }) {
+    _s();
+    //Use for enabling edit view
+    const [editing, setEditing] = (0, _react.useState)(false);
+    //Essentials for getting full user info 
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    //Needed user info
+    var { userForename , userSurname , userUsername , userEmail , userCelebrate , userFavourites  } = storedUser;
+    //Birthday formatting
+    var birthdayArray = userCelebrate.split("-");
+    function monthRead(n) {
+        wordMonths = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+        var num = parseInt(n);
+        return wordMonths[num - 1];
+    }
+    var trueBirthday = `${birthdayArray[2].split("T")[0]} ${monthRead(birthdayArray[1])} (${birthdayArray[2].split("T")[0]} ${birthdayArray[1]})`;
+    //The long ids of all favourites
+    var listOfFavourites = [];
+    userFavourites.forEach(function(i) {
+        listOfFavourites.push(i);
+    });
+    /*Testing*/ console.log("It received", items);
+    console.log("Favourites are", listOfFavourites);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                    children: "YOUR PROFILE"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 29,
+                    columnNumber: 22
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 29,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Forename: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 30,
+                        columnNumber: 22
+                    }, this),
+                    userForename
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 30,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Surname: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 31,
+                        columnNumber: 22
+                    }, this),
+                    userSurname
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 31,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Username: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 32,
+                        columnNumber: 22
+                    }, this),
+                    userUsername
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 32,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Email: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 33,
+                        columnNumber: 22
+                    }, this),
+                    userEmail
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 33,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Birthday: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 34,
+                        columnNumber: 22
+                    }, this),
+                    trueBirthday
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 34,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                as: (0, _reactRouterDom.Link),
+                to: "/profile/edit",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    variant: "secondary text-white",
+                    className: "my-2",
+                    children: "EDIT USER INFO"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 36,
+                    columnNumber: 21
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 35,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                    children: "YOUR FAVOURITES"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 38,
+                    columnNumber: 22
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 38,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    children: listOfFavourites.map(function(item) {
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            className: "my-2",
+                            lg: 3,
+                            md: 4,
+                            sm: 6,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
+                                itemInfo: item
+                            }, void 0, false, {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 40,
+                                columnNumber: 133
+                            }, this)
+                        }, item.itemId, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 40,
+                            columnNumber: 72
+                        }, this);
+                    })
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 40,
+                    columnNumber: 21
+                }, this)
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 39,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/profile-view/profile-view.jsx",
+        lineNumber: 28,
+        columnNumber: 13
+    }, this);
+};
+_s(ProfileView, "8NtxifNHNH77GP4fOyN5Q3EVoDA=");
+_c = ProfileView;
+var _c;
+$RefreshReg$(_c, "ProfileView");
+
+  $parcel$ReactRefreshHelpers$3c12.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","../item-card/item-card":"juZtq"}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40378,7 +40707,7 @@ const RegistrationView = function() {
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                class: "btn-group",
+                className: "btn-group",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                         variant: "primary",
@@ -40396,7 +40725,6 @@ const RegistrationView = function() {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                             variant: "secondary text-white",
                             className: "m-2",
-                            type: "submit",
                             children: "EXISTING USER"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
@@ -40431,7 +40759,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react-router-dom":"9xmpe"}],"bsPVM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"bsPVM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$abf5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40564,154 +40892,6 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"2vVqf":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3c12.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const ProfileView = function() {
-    //Essentials for getting full user info 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedToken = localStorage.getItem("token");
-    //Display user info
-    var { userForename , userSurname , userUsername , userEmail , userCelebrate  } = storedUser;
-    var birthdayArray = userCelebrate.split("-");
-    function monthRead(n) {
-        wordMonths = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ];
-        var num = parseInt(n);
-        return wordMonths[num - 1];
-    }
-    var trueBirthday = `${birthdayArray[2].split("T")[0]} ${monthRead(birthdayArray[1])} (${birthdayArray[2].split("T")[0]} ${birthdayArray[1]})`;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                    children: "YOUR PROFILE"
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 16,
-                    columnNumber: 22
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 16,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Forename: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 17,
-                        columnNumber: 22
-                    }, this),
-                    userForename
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 17,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Surname: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 18,
-                        columnNumber: 22
-                    }, this),
-                    userSurname
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 18,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Username: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 19,
-                        columnNumber: 22
-                    }, this),
-                    userUsername
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 19,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Email: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 20,
-                        columnNumber: 22
-                    }, this),
-                    userEmail
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 20,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Birthday: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 21,
-                        columnNumber: 22
-                    }, this),
-                    trueBirthday
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 21,
-                columnNumber: 17
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 15,
-        columnNumber: 13
-    }, this);
-};
-_c = ProfileView;
-var _c;
-$RefreshReg$(_c, "ProfileView");
-
-  $parcel$ReactRefreshHelpers$3c12.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
