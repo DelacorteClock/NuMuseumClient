@@ -11,7 +11,7 @@ export const ItemView = function ({items}) {
     //Check favourite status
     function statusScanner(i) {
         var idArray = [];
-        storedUser.userFavourites.forEach(function (i) {idArray.push(i._id);});
+        storedUser.userFavourites.forEach(function (i) {idArray.push(i);});
         var loc = idArray.indexOf(i);
         console.log(loc);
         console.log(idArray);
@@ -24,11 +24,9 @@ export const ItemView = function ({items}) {
     const buttonText = statusScanner(_id);
     //Switch favourite status
     function statusSwitcher(i) {
-        var idArray = [];
-        storedUser.userFavourites.forEach(function (i) {idArray.push(i._id);});
-        var loc = idArray.indexOf(i);
+        var loc = storedUser.userFavourites.indexOf(i);
         console.log(loc);
-        console.log(idArray);
+        console.log(storedUser.userFavourites);
         if (loc > -1) {
             favItemRemove(i);
         } else {
@@ -44,7 +42,7 @@ export const ItemView = function ({items}) {
             }
         }).then(function (res) {
             if (res.status === 200) {
-                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/min/users/username/${storedUser.userUsername}/`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${storedToken}`
@@ -72,7 +70,7 @@ export const ItemView = function ({items}) {
             }
         }).then(function (res) {
             if (res.status === 200) {
-                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/min/users/username/${storedUser.userUsername}/`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${storedToken}`

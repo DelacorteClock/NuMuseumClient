@@ -20,10 +20,14 @@ export const ProfileView = function ({items}) {
     var trueBirthday = `${birthdayArray[2].split('T')[0]} ${monthRead(birthdayArray[1])} (${birthdayArray[2].split('T')[0]} ${birthdayArray[1]})`;
     //The long ids of all favourites
     var listOfFavourites = [];
-    userFavourites.forEach(function (i) {listOfFavourites.push(i);});
+    userFavourites.forEach(function (i) {
+        listOfFavourites.push(items.find(function (o) {return o._id === i;}));
+    });
     /*Testing*/
     console.log('It received', items);
-    console.log('Favourites are', listOfFavourites);
+    console.log(storedUser);
+    console.log(userFavourites);
+    console.log(listOfFavourites);
     return (
             <div>
                 <div><b>YOUR PROFILE</b></div>

@@ -39588,7 +39588,7 @@ const ItemView = function({ items  }) {
     function statusScanner(i) {
         var idArray = [];
         storedUser.userFavourites.forEach(function(i) {
-            idArray.push(i._id);
+            idArray.push(i);
         });
         var loc = idArray.indexOf(i);
         console.log(loc);
@@ -39599,13 +39599,9 @@ const ItemView = function({ items  }) {
     const buttonText = statusScanner(_id);
     //Switch favourite status
     function statusSwitcher(i) {
-        var idArray = [];
-        storedUser.userFavourites.forEach(function(i) {
-            idArray.push(i._id);
-        });
-        var loc = idArray.indexOf(i);
+        var loc = storedUser.userFavourites.indexOf(i);
         console.log(loc);
-        console.log(idArray);
+        console.log(storedUser.userFavourites);
         if (loc > -1) favItemRemove(i);
         else favItemAdd(i);
     }
@@ -39617,7 +39613,7 @@ const ItemView = function({ items  }) {
                 Authorization: `Bearer ${storedToken}`
             }
         }).then(function(res) {
-            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/min/users/username/${storedUser.userUsername}/`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${storedToken}`
@@ -39642,7 +39638,7 @@ const ItemView = function({ items  }) {
                 Authorization: `Bearer ${storedToken}`
             }
         }).then(function(res) {
-            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/min/users/username/${storedUser.userUsername}/`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${storedToken}`
@@ -39669,7 +39665,7 @@ const ItemView = function({ items  }) {
                     children: "Dimensions: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 103,
+                    lineNumber: 101,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -39681,13 +39677,13 @@ const ItemView = function({ items  }) {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 104,
+                    lineNumber: 102,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 102,
+            lineNumber: 100,
             columnNumber: 21
         }, this);
         else if (dimensionArray.length === 3) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39696,7 +39692,7 @@ const ItemView = function({ items  }) {
                     children: "Dimensions: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 110,
+                    lineNumber: 108,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -39710,13 +39706,13 @@ const ItemView = function({ items  }) {
                     ]
                 }, void 0, true, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 111,
+                    lineNumber: 109,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 109,
+            lineNumber: 107,
             columnNumber: 21
         }, this);
         else //A single dimension array should not exist
@@ -39730,20 +39726,20 @@ const ItemView = function({ items  }) {
                     children: "Exhibit: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 124,
+                    lineNumber: 122,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: exhibitName
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 125,
+                    lineNumber: 123,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 123,
+            lineNumber: 121,
             columnNumber: 21
         }, this);
         else console.log("NO EXHIBIT FOR " + itemId);
@@ -39760,20 +39756,20 @@ const ItemView = function({ items  }) {
                     children: "Status: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 143,
+                    lineNumber: 141,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: "In public domain"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 144,
+                    lineNumber: 142,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 142,
+            lineNumber: 140,
             columnNumber: 21
         }, this);
         else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39782,20 +39778,20 @@ const ItemView = function({ items  }) {
                     children: "Status: "
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 150,
+                    lineNumber: 148,
                     columnNumber: 25
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: "Not in public domain"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 151,
+                    lineNumber: 149,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/item-view/item-view.jsx",
-            lineNumber: 149,
+            lineNumber: 147,
             columnNumber: 21
         }, this);
     }
@@ -39808,12 +39804,12 @@ const ItemView = function({ items  }) {
                     className: "mt-2"
                 }, void 0, false, {
                     fileName: "src/components/item-view/item-view.jsx",
-                    lineNumber: 158,
+                    lineNumber: 156,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 158,
+                lineNumber: 156,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39822,41 +39818,41 @@ const ItemView = function({ items  }) {
                         children: title
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 160,
+                        lineNumber: 158,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: " by "
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 161,
+                        lineNumber: 159,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: artist.artistName
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 162,
+                        lineNumber: 160,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: " "
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 163,
+                        lineNumber: 161,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: featuredScan(isFeatured)
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 164,
+                        lineNumber: 162,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 159,
+                lineNumber: 157,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39865,20 +39861,20 @@ const ItemView = function({ items  }) {
                         children: "ABOUT THIS WORK"
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 167,
+                        lineNumber: 165,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: description
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 168,
+                        lineNumber: 166,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 166,
+                lineNumber: 164,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39887,7 +39883,7 @@ const ItemView = function({ items  }) {
                         children: "ITEM FACTS"
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 171,
+                        lineNumber: 169,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39896,20 +39892,20 @@ const ItemView = function({ items  }) {
                                 children: "Item ID: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 173,
+                                lineNumber: 171,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: itemId
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 174,
+                                lineNumber: 172,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 172,
+                        lineNumber: 170,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39918,20 +39914,20 @@ const ItemView = function({ items  }) {
                                 children: "Artist: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 177,
+                                lineNumber: 175,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: artist.artistName
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 178,
+                                lineNumber: 176,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 176,
+                        lineNumber: 174,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39940,20 +39936,20 @@ const ItemView = function({ items  }) {
                                 children: "Year Created: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 181,
+                                lineNumber: 179,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: objectDate
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 182,
+                                lineNumber: 180,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 180,
+                        lineNumber: 178,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39962,20 +39958,20 @@ const ItemView = function({ items  }) {
                                 children: "Department: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 185,
+                                lineNumber: 183,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: department.deptTitle
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 186,
+                                lineNumber: 184,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 184,
+                        lineNumber: 182,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39984,20 +39980,20 @@ const ItemView = function({ items  }) {
                                 children: "Medium: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 189,
+                                lineNumber: 187,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: medium
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 190,
+                                lineNumber: 188,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 188,
+                        lineNumber: 186,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40006,20 +40002,20 @@ const ItemView = function({ items  }) {
                                 children: "Type: "
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 193,
+                                lineNumber: 191,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: objectName
                             }, void 0, false, {
                                 fileName: "src/components/item-view/item-view.jsx",
-                                lineNumber: 194,
+                                lineNumber: 192,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 192,
+                        lineNumber: 190,
                         columnNumber: 21
                     }, this),
                     dimensionScan(dimensions),
@@ -40028,7 +40024,7 @@ const ItemView = function({ items  }) {
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 170,
+                lineNumber: 168,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40042,12 +40038,12 @@ const ItemView = function({ items  }) {
                             children: "VIEW FULL COLLECTION"
                         }, void 0, false, {
                             fileName: "src/components/item-view/item-view.jsx",
-                            lineNumber: 202,
+                            lineNumber: 200,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 201,
+                        lineNumber: 199,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -40059,19 +40055,19 @@ const ItemView = function({ items  }) {
                         children: buttonText
                     }, void 0, false, {
                         fileName: "src/components/item-view/item-view.jsx",
-                        lineNumber: 204,
+                        lineNumber: 202,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/item-view/item-view.jsx",
-                lineNumber: 200,
+                lineNumber: 198,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/item-view/item-view.jsx",
-        lineNumber: 157,
+        lineNumber: 155,
         columnNumber: 13
     }, this);
 };
@@ -40299,10 +40295,14 @@ const ProfileView = function({ items  }) {
     //The long ids of all favourites
     var listOfFavourites = [];
     userFavourites.forEach(function(i) {
-        listOfFavourites.push(i);
+        listOfFavourites.push(items.find(function(o) {
+            return o._id === i;
+        }));
     });
     /*Testing*/ console.log("It received", items);
-    console.log("Favourites are", listOfFavourites);
+    console.log(storedUser);
+    console.log(userFavourites);
+    console.log(listOfFavourites);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40310,12 +40310,12 @@ const ProfileView = function({ items  }) {
                     children: "YOUR PROFILE"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 29,
+                    lineNumber: 33,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 29,
+                lineNumber: 33,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40324,14 +40324,14 @@ const ProfileView = function({ items  }) {
                         children: "Forename: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 34,
                         columnNumber: 22
                     }, this),
                     userForename
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 30,
+                lineNumber: 34,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40340,14 +40340,14 @@ const ProfileView = function({ items  }) {
                         children: "Surname: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 31,
+                        lineNumber: 35,
                         columnNumber: 22
                     }, this),
                     userSurname
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 31,
+                lineNumber: 35,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40356,14 +40356,14 @@ const ProfileView = function({ items  }) {
                         children: "Username: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 32,
+                        lineNumber: 36,
                         columnNumber: 22
                     }, this),
                     userUsername
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40372,14 +40372,14 @@ const ProfileView = function({ items  }) {
                         children: "Email: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 33,
+                        lineNumber: 37,
                         columnNumber: 22
                     }, this),
                     userEmail
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 33,
+                lineNumber: 37,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40388,14 +40388,14 @@ const ProfileView = function({ items  }) {
                         children: "Birthday: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 34,
+                        lineNumber: 38,
                         columnNumber: 22
                     }, this),
                     trueBirthday
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 34,
+                lineNumber: 38,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40407,12 +40407,12 @@ const ProfileView = function({ items  }) {
                     children: "EDIT USER INFO"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 36,
+                    lineNumber: 40,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 35,
+                lineNumber: 39,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40420,12 +40420,12 @@ const ProfileView = function({ items  }) {
                     children: "YOUR FAVOURITES"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 38,
+                    lineNumber: 42,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 38,
+                lineNumber: 42,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40440,29 +40440,29 @@ const ProfileView = function({ items  }) {
                                 itemInfo: item
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 40,
+                                lineNumber: 44,
                                 columnNumber: 133
                             }, this)
                         }, item.itemId, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 40,
+                            lineNumber: 44,
                             columnNumber: 72
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 44,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 39,
+                lineNumber: 43,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 28,
+        lineNumber: 32,
         columnNumber: 13
     }, this);
 };
