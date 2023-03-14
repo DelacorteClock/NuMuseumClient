@@ -27370,7 +27370,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk","../login-view/login-view":"9YtA0","../profile-view/profile-view":"2vVqf","../registration-view/registration-view":"3U8r7","../navigation-bar/navigation-bar":"bsPVM","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","../profile-edit-view/profile-edit-view":"5PIfB"}],"9wLrc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","react":"21dqq","../item-card/item-card":"juZtq","../item-view/item-view":"6v4mk","../login-view/login-view":"9YtA0","../profile-view/profile-view":"2vVqf","../profile-edit-view/profile-edit-view":"5PIfB","../registration-view/registration-view":"3U8r7","../navigation-bar/navigation-bar":"bsPVM","react-bootstrap":"3AD9A","react-router-dom":"9xmpe"}],"9wLrc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -40476,7 +40476,313 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH","../item-card/item-card":"juZtq"}],"3U8r7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","../item-card/item-card":"juZtq","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"5PIfB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fd8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileEditView", ()=>ProfileEditView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const ProfileEditView = function() {
+    _s();
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedToken = localStorage.getItem("token");
+    var { userForename , userSurname , userUsername , userEmail , userCelebrate  } = storedUser;
+    var birthdayArray = userCelebrate.split("-");
+    //All possible modifyable values
+    const [forename, setForename] = (0, _react.useState)(userForename);
+    const [surname, setSurname] = (0, _react.useState)(userSurname);
+    const [username, setUsername] = (0, _react.useState)(userUsername);
+    const [email, setEmail] = (0, _react.useState)(userEmail);
+    const [code, setCode] = (0, _react.useState)("");
+    const [birthday, setBirthday] = (0, _react.useState)(`${birthdayArray[2].split("T")[0]} ${birthdayArray[1]}`);
+    const hdlSubmit = function(evt) {
+        evt.preventDefault();
+        const builtDate = birthday.split(" ");
+        if (code) var info = {
+            userForename: forename,
+            userSurname: surname,
+            userEmail: email,
+            userUsername: username,
+            userCode: code,
+            userCelebrate: `1618-${builtDate[1]}-${builtDate[0]}`
+        };
+        else var info = {
+            userForename: forename,
+            userSurname: surname,
+            userEmail: email,
+            userUsername: username,
+            userCelebrate: `1618-${builtDate[1]}-${builtDate[0]}`
+        };
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${userUsername}`, {
+            method: "PUT",
+            body: JSON.stringify(info),
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${storedToken}`
+            }
+        }).then(function(res) {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${storedToken}`
+                }
+            }).then(function(res) {
+                return res.json();
+            }).then(function(info) {
+                console.log(info);
+                localStorage.setItem("user", JSON.stringify(info));
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE UPDATED`);
+                window.location.reload();
+            });
+            else alert("UPDATE FAILURE");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+        onSubmit: hdlSubmit,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regForename",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Forename"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 71,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        value: forename,
+                        onChange: function(e) {
+                            setForename(e.target.value);
+                        },
+                        placeholder: "Your Forename",
+                        pattern: "[A-Za-z]{2,}"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 72,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 70,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regSurname",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Surname"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 75,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        value: surname,
+                        onChange: function(e) {
+                            setSurname(e.target.value);
+                        },
+                        placeholder: "Your Surname",
+                        pattern: "[A-Za-z]{2,}"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 76,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 74,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regEmail",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Email"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 79,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "email",
+                        value: email,
+                        onChange: function(e) {
+                            setEmail(e.target.value);
+                        },
+                        placeholder: "Your Email",
+                        required: true
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 80,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 78,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regUsername",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Username"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 83,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        value: username,
+                        onChange: function(e) {
+                            setUsername(e.target.value);
+                        },
+                        placeholder: "Your Username",
+                        pattern: "\\w{5,}"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 84,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 82,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regCode",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        children: "Code"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 87,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "password",
+                        value: code,
+                        onChange: function(e) {
+                            setCode(e.target.value);
+                        },
+                        placeholder: "Type New Code",
+                        minLength: "10"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 88,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 86,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                controlId: "regBirthday",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                        className: "my-4",
+                        children: "(Optional) Birthday (dd mm)"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 91,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                        type: "text",
+                        value: birthday,
+                        onChange: function(e) {
+                            setBirthday(e.target.value);
+                        },
+                        placeholder: "DD MM (Optional)",
+                        pattern: "[0-3][0-9] [0-1][0-9]"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 92,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 90,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "btn-group",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                        variant: "primary",
+                        className: "my-2",
+                        type: "submit",
+                        children: "DONE"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 95,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        as: (0, _reactRouterDom.Link),
+                        to: "/profile",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                            variant: "secondary text-white",
+                            className: "m-2",
+                            children: "RETURN TO PROFILE"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                            lineNumber: 97,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 96,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                lineNumber: 94,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+        lineNumber: 69,
+        columnNumber: 9
+    }, this);
+};
+_s(ProfileEditView, "IxgIrGCdyuy+vlfd0IzyLVFt0Z8=");
+_c = ProfileEditView;
+var _c;
+$RefreshReg$(_c, "ProfileEditView");
+
+  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40897,312 +41203,6 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"5PIfB":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7fd8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileEditView", ()=>ProfileEditView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const ProfileEditView = function() {
-    _s();
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedToken = localStorage.getItem("token");
-    var { userForename , userSurname , userUsername , userEmail , userCelebrate  } = storedUser;
-    var birthdayArray = userCelebrate.split("-");
-    //All possible modifyable values
-    const [forename, setForename] = (0, _react.useState)(userForename);
-    const [surname, setSurname] = (0, _react.useState)(userSurname);
-    const [username, setUsername] = (0, _react.useState)(userUsername);
-    const [email, setEmail] = (0, _react.useState)(userEmail);
-    const [code, setCode] = (0, _react.useState)("");
-    const [birthday, setBirthday] = (0, _react.useState)(`${birthdayArray[2].split("T")[0]} ${birthdayArray[1]}`);
-    const hdlSubmit = function(evt) {
-        evt.preventDefault();
-        const builtDate = birthday.split(" ");
-        if (code) var info = {
-            userForename: forename,
-            userSurname: surname,
-            userEmail: email,
-            userUsername: username,
-            userCode: code,
-            userCelebrate: `1618-${builtDate[1]}-${builtDate[0]}`
-        };
-        else var info = {
-            userForename: forename,
-            userSurname: surname,
-            userEmail: email,
-            userUsername: username,
-            userCelebrate: `1618-${builtDate[1]}-${builtDate[0]}`
-        };
-        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${userUsername}`, {
-            method: "PUT",
-            body: JSON.stringify(info),
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${storedToken}`
-            }
-        }).then(function(res) {
-            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
-                method: "GET",
-                headers: {
-                    Authorization: `Bearer ${storedToken}`
-                }
-            }).then(function(res) {
-                return res.json();
-            }).then(function(info) {
-                console.log(info);
-                localStorage.setItem("user", JSON.stringify(info));
-                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
-                speechSynthesis.speak(notify);
-                alert(`PROFILE UPDATED`);
-                window.location.reload();
-            });
-            else alert("UPDATE FAILURE");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-        onSubmit: hdlSubmit,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regForename",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Forename"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 71,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: forename,
-                        onChange: function(e) {
-                            setForename(e.target.value);
-                        },
-                        placeholder: "Your Forename",
-                        pattern: "[A-Za-z]{2,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 72,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 70,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regSurname",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Surname"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 75,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: surname,
-                        onChange: function(e) {
-                            setSurname(e.target.value);
-                        },
-                        placeholder: "Your Surname",
-                        pattern: "[A-Za-z]{2,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 76,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 74,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regEmail",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Email"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 79,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "email",
-                        value: email,
-                        onChange: function(e) {
-                            setEmail(e.target.value);
-                        },
-                        placeholder: "Your Email",
-                        required: true
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 80,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 78,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regUsername",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Username"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 83,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: username,
-                        onChange: function(e) {
-                            setUsername(e.target.value);
-                        },
-                        placeholder: "Your Username",
-                        pattern: "\\w{5,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 84,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 82,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regCode",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Code"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 87,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "password",
-                        value: code,
-                        onChange: function(e) {
-                            setCode(e.target.value);
-                        },
-                        placeholder: "Type New Code",
-                        minLength: "10"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 88,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 86,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regBirthday",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        className: "my-4",
-                        children: "(Optional) Birthday (dd mm)"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 91,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: birthday,
-                        onChange: function(e) {
-                            setBirthday(e.target.value);
-                        },
-                        placeholder: "DD MM (Optional)",
-                        pattern: "[0-3][0-9] [0-1][0-9]"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 92,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 90,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "btn-group",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                        variant: "primary",
-                        className: "my-2",
-                        type: "submit",
-                        children: "DONE"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 95,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        as: (0, _reactRouterDom.Link),
-                        to: "/profile",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            variant: "secondary text-white",
-                            className: "m-2",
-                            children: "RETURN TO PROFILE"
-                        }, void 0, false, {
-                            fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                            lineNumber: 97,
-                            columnNumber: 25
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 96,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 94,
-                columnNumber: 17
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-        lineNumber: 69,
-        columnNumber: 9
-    }, this);
-};
-_s(ProfileEditView, "IxgIrGCdyuy+vlfd0IzyLVFt0Z8=");
-_c = ProfileEditView;
-var _c;
-$RefreshReg$(_c, "ProfileEditView");
-
-  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"9wLrc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6XgOH"}],"lJZlQ":[function() {},{}]},["e843m","dnsZ1","d8Dch"], "d8Dch", "parcelRequire0050")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
