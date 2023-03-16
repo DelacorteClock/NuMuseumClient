@@ -27186,6 +27186,7 @@ const MainView = function() {
             return res.json();
         }).then(function(info) {
             setItems(info);
+            localStorage.setItem("items", JSON.stringify(info));
         });
     }, [
         token
@@ -27202,7 +27203,7 @@ const MainView = function() {
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27221,7 +27222,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27241,7 +27242,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27268,7 +27269,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 52,
+                            lineNumber: 53,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27279,14 +27280,12 @@ const MainView = function() {
                                     replace: true
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                     md: 10,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
-                                        items: items
-                                    }, void 0, false, void 0, void 0)
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {}, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 63,
+                            lineNumber: 64,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27302,7 +27301,7 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 70,
+                            lineNumber: 71,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27338,24 +27337,24 @@ const MainView = function() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 35,
+                    lineNumber: 36,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 13
     }, this);
 };
@@ -40261,14 +40260,11 @@ var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _itemCard = require("../item-card/item-card");
-var _s = $RefreshSig$();
-const ProfileView = function({ items  }) {
-    _s();
-    //Use for enabling edit view
-    const [editing, setEditing] = (0, _react.useState)(false);
+const ProfileView = function() {
     //Essentials for getting full user info 
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
+    if (!items) var items = JSON.parse(localStorage.getItem("items"));
     //Needed user info
     var { userForename , userSurname , userUsername , userEmail , userCelebrate , userFavourites  } = storedUser;
     //Birthday formatting
@@ -40313,12 +40309,12 @@ const ProfileView = function({ items  }) {
                             children: "YOUR FAVOURITES"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 37,
+                            lineNumber: 38,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40333,29 +40329,29 @@ const ProfileView = function({ items  }) {
                                         itemInfo: item
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 40,
+                                        lineNumber: 41,
                                         columnNumber: 125
                                     }, this)
                                 }, item.itemId, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 40,
+                                    lineNumber: 41,
                                     columnNumber: 64
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 40,
+                            lineNumber: 41,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 17
             }, this);
         } else {
@@ -40370,12 +40366,12 @@ const ProfileView = function({ items  }) {
                     children: "YOUR PROFILE"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 50,
+                    lineNumber: 51,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40384,26 +40380,10 @@ const ProfileView = function({ items  }) {
                         children: "Forename: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 51,
-                        columnNumber: 22
-                    }, this),
-                    userForename
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 51,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Surname: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 52,
                         columnNumber: 22
                     }, this),
-                    userSurname
+                    userForename
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
@@ -40413,13 +40393,13 @@ const ProfileView = function({ items  }) {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Username: "
+                        children: "Surname: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 53,
                         columnNumber: 22
                     }, this),
-                    userUsername
+                    userSurname
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
@@ -40429,13 +40409,13 @@ const ProfileView = function({ items  }) {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Email: "
+                        children: "Username: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 54,
                         columnNumber: 22
                     }, this),
-                    userEmail
+                    userUsername
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
@@ -40445,17 +40425,33 @@ const ProfileView = function({ items  }) {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                        children: "Birthday: "
+                        children: "Email: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 55,
+                        columnNumber: 22
+                    }, this),
+                    userEmail
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 55,
+                columnNumber: 17
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                        children: "Birthday: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 56,
                         columnNumber: 22
                     }, this),
                     trueBirthday
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40467,29 +40463,28 @@ const ProfileView = function({ items  }) {
                     children: "EDIT USER INFO"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 57,
+                    lineNumber: 58,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 56,
+                lineNumber: 57,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: listExistTest(listOfFavourites)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 49,
+        lineNumber: 50,
         columnNumber: 13
     }, this);
 };
-_s(ProfileView, "8NtxifNHNH77GP4fOyN5Q3EVoDA=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");

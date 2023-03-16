@@ -25,6 +25,7 @@ const MainView = function () {
             return res.json();
         }).then(function (info) {
             setItems(info);
+            localStorage.setItem('items', JSON.stringify(info));
         });
     }, [token]);
     //Force login
@@ -64,7 +65,7 @@ const MainView = function () {
                             {!user ? (
                                 <Navigate to='/login' replace />
                             ) : (
-                                <Col md={10}><ProfileView items={items} /></Col>
+                                <Col md={10}><ProfileView /></Col>
                             )}
                         </div>} />
                         <Route path='/profile/edit' element={<div>

@@ -2,12 +2,13 @@ import {useState} from 'react';
 import {Button, Form, Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {ItemCard} from '../item-card/item-card';
-export const ProfileView = function ({items}) {
-    //Use for enabling edit view
-    const [editing, setEditing] = useState(false);
+export const ProfileView = function () {
     //Essentials for getting full user info 
     const storedUser = JSON.parse(localStorage.getItem('user'));
     const storedToken = localStorage.getItem('token');
+    if (!items) {
+        var items = JSON.parse(localStorage.getItem('items'));
+    }
     //Needed user info
     var {userForename, userSurname, userUsername, userEmail, userCelebrate, userFavourites} = storedUser;
     //Birthday formatting
