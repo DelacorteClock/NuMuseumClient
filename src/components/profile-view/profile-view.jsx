@@ -14,7 +14,7 @@ export const ProfileView = function () {
     //Birthday formatting
     var birthdayArray = userCelebrate.split('-');
     function monthRead(n) {
-        wordMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var wordMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         var num = parseInt(n);
         return wordMonths[num - 1];
     };
