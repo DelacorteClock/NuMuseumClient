@@ -28,6 +28,23 @@ export const ProfileView = function ({items}) {
     console.log(storedUser);
     console.log(userFavourites);
     console.log(listOfFavourites);
+    function listExistTest(list) {
+        if (list.length > 0) {
+            console.log('yes',list);
+            return (
+                <div>
+                    <div>
+                        <b>YOUR FAVOURITES</b>
+                    </div>
+                    <div>
+                        <Row>{list.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} /></Col>;})}</Row>
+                    </div>
+                </div>);
+        } else {
+            console.log('no');
+            return '';
+        }
+    };
     return (
             <div>
                 <div><b>YOUR PROFILE</b></div>
@@ -39,10 +56,7 @@ export const ProfileView = function ({items}) {
                 <Link as={Link} to='/profile/edit'>
                     <Button variant='secondary text-white' className='my-2'>EDIT USER INFO</Button>
                 </Link>
-                <div><b>YOUR FAVOURITES</b></div>
-                <div>
-                    <Row>{listOfFavourites.map(function (item) {return <Col className='my-2' key={item.itemId} lg={3} md={4} sm={6}><ItemCard itemInfo={item} /></Col>;})}</Row>
-                </div>
+                <div>{listExistTest(listOfFavourites)}</div>
             </div>
         );
 };

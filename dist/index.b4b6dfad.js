@@ -40303,6 +40303,66 @@ const ProfileView = function({ items  }) {
     console.log(storedUser);
     console.log(userFavourites);
     console.log(listOfFavourites);
+    function listExistTest(list) {
+        if (list.length > 0) {
+            console.log("yes", list);
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                            children: "YOUR FAVOURITES"
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 37,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 36,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                            children: list.map(function(item) {
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                    className: "my-2",
+                                    lg: 3,
+                                    md: 4,
+                                    sm: 6,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
+                                        itemInfo: item
+                                    }, void 0, false, {
+                                        fileName: "src/components/profile-view/profile-view.jsx",
+                                        lineNumber: 40,
+                                        columnNumber: 125
+                                    }, this)
+                                }, item.itemId, false, {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 40,
+                                    columnNumber: 64
+                                }, this);
+                            })
+                        }, void 0, false, {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 40,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 39,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 35,
+                columnNumber: 17
+            }, this);
+        } else {
+            console.log("no");
+            return "";
+        }
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40310,12 +40370,12 @@ const ProfileView = function({ items  }) {
                     children: "YOUR PROFILE"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 33,
+                    lineNumber: 50,
                     columnNumber: 22
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 33,
+                lineNumber: 50,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40324,14 +40384,14 @@ const ProfileView = function({ items  }) {
                         children: "Forename: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 34,
+                        lineNumber: 51,
                         columnNumber: 22
                     }, this),
                     userForename
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 34,
+                lineNumber: 51,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40340,14 +40400,14 @@ const ProfileView = function({ items  }) {
                         children: "Surname: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 35,
+                        lineNumber: 52,
                         columnNumber: 22
                     }, this),
                     userSurname
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 35,
+                lineNumber: 52,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40356,14 +40416,14 @@ const ProfileView = function({ items  }) {
                         children: "Username: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 53,
                         columnNumber: 22
                     }, this),
                     userUsername
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 36,
+                lineNumber: 53,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40372,14 +40432,14 @@ const ProfileView = function({ items  }) {
                         children: "Email: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 37,
+                        lineNumber: 54,
                         columnNumber: 22
                     }, this),
                     userEmail
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 37,
+                lineNumber: 54,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40388,14 +40448,14 @@ const ProfileView = function({ items  }) {
                         children: "Birthday: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 38,
+                        lineNumber: 55,
                         columnNumber: 22
                     }, this),
                     trueBirthday
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 38,
+                lineNumber: 55,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40407,62 +40467,25 @@ const ProfileView = function({ items  }) {
                     children: "EDIT USER INFO"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 57,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 39,
+                lineNumber: 56,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                    children: "YOUR FAVOURITES"
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 42,
-                    columnNumber: 22
-                }, this)
+                children: listExistTest(listOfFavourites)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 42,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                    children: listOfFavourites.map(function(item) {
-                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                            className: "my-2",
-                            lg: 3,
-                            md: 4,
-                            sm: 6,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemCard.ItemCard), {
-                                itemInfo: item
-                            }, void 0, false, {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 44,
-                                columnNumber: 133
-                            }, this)
-                        }, item.itemId, false, {
-                            fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 44,
-                            columnNumber: 72
-                        }, this);
-                    })
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 44,
-                    columnNumber: 21
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 43,
+                lineNumber: 59,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 32,
+        lineNumber: 49,
         columnNumber: 13
     }, this);
 };
@@ -40533,7 +40556,7 @@ const ProfileEditView = function() {
                 "Authorization": `Bearer ${storedToken}`
             }
         }).then(function(res) {
-            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${storedUser.userUsername}/`, {
+            if (res.status === 200) fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/min/users/username/${storedUser.userUsername}/`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${storedToken}`
@@ -40551,224 +40574,305 @@ const ProfileEditView = function() {
             else alert("UPDATE FAILURE");
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-        onSubmit: hdlSubmit,
+    const forceDelete = function(evt) {
+        evt.preventDefault();
+        fetch(`https://rubbersuitleatherpantsspacesuit.onrender.com/users/username/${userUsername}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${storedToken}`
+            }
+        }).then(function(res) {
+            if (res.status === 200) {
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now deleted successfully.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE DELETED SUCCESSFULLY`);
+                localStorage.clear();
+                window.location.reload();
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is not deleted successfully.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE NOT DELETED SUCCESSFULLY`);
+            }
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regForename",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                onSubmit: hdlSubmit,
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Forename"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 71,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: forename,
-                        onChange: function(e) {
-                            setForename(e.target.value);
-                        },
-                        placeholder: "Your Forename",
-                        pattern: "[A-Za-z]{2,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 72,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 70,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regSurname",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Surname"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 75,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: surname,
-                        onChange: function(e) {
-                            setSurname(e.target.value);
-                        },
-                        placeholder: "Your Surname",
-                        pattern: "[A-Za-z]{2,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 76,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 74,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regEmail",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Email"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 79,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "email",
-                        value: email,
-                        onChange: function(e) {
-                            setEmail(e.target.value);
-                        },
-                        placeholder: "Your Email",
-                        required: true
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 80,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 78,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regUsername",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Username"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 83,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: username,
-                        onChange: function(e) {
-                            setUsername(e.target.value);
-                        },
-                        placeholder: "Your Username",
-                        pattern: "\\w{5,}"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 84,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 82,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regCode",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Code"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 87,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "password",
-                        value: code,
-                        onChange: function(e) {
-                            setCode(e.target.value);
-                        },
-                        placeholder: "Type New Code",
-                        minLength: "10"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 88,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 86,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                controlId: "regBirthday",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        className: "my-4",
-                        children: "(Optional) Birthday (dd mm)"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 91,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "text",
-                        value: birthday,
-                        onChange: function(e) {
-                            setBirthday(e.target.value);
-                        },
-                        placeholder: "DD MM (Optional)",
-                        pattern: "[0-3][0-9] [0-1][0-9]"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regForename",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Forename"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 93,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                value: forename,
+                                onChange: function(e) {
+                                    setForename(e.target.value);
+                                },
+                                placeholder: "Your Forename",
+                                pattern: "[A-Za-z]{2,}"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 94,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
                         lineNumber: 92,
                         columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regSurname",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Surname"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 97,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                value: surname,
+                                onChange: function(e) {
+                                    setSurname(e.target.value);
+                                },
+                                placeholder: "Your Surname",
+                                pattern: "[A-Za-z]{2,}"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 98,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 96,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regEmail",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Email"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 101,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "email",
+                                value: email,
+                                onChange: function(e) {
+                                    setEmail(e.target.value);
+                                },
+                                placeholder: "Your Email",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 102,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 100,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regUsername",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Username"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 105,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                value: username,
+                                onChange: function(e) {
+                                    setUsername(e.target.value);
+                                },
+                                placeholder: "Your Username",
+                                pattern: "\\w{5,}"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 106,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 104,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regCode",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                children: "Code"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 109,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "password",
+                                value: code,
+                                onChange: function(e) {
+                                    setCode(e.target.value);
+                                },
+                                placeholder: "Type New Code",
+                                minLength: "10"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 110,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 108,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "regBirthday",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                className: "my-4",
+                                children: "(Optional) Birthday (dd mm)"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 113,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                value: birthday,
+                                onChange: function(e) {
+                                    setBirthday(e.target.value);
+                                },
+                                placeholder: "DD MM (Optional)",
+                                pattern: "[0-3][0-9] [0-1][0-9]"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 114,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 112,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "btn-group",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                variant: "primary",
+                                className: "my-2",
+                                type: "submit",
+                                children: "DONE"
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 117,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                as: (0, _reactRouterDom.Link),
+                                to: "/profile",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                    variant: "secondary text-white",
+                                    className: "m-2",
+                                    children: "RETURN TO PROFILE"
+                                }, void 0, false, {
+                                    fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 118,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 116,
+                        columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 90,
-                columnNumber: 17
+                lineNumber: 91,
+                columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "btn-group",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                onSubmit: forceDelete,
                 children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                        controlId: "delForce",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                className: "my-4",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                    children: "FORCE DELETE ACCOUNT"
+                                }, void 0, false, {
+                                    fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                    lineNumber: 125,
+                                    columnNumber: 50
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 125,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                type: "text",
+                                placeholder: "Type 'FORCE DELETE NOW' to delete account.",
+                                pattern: "FORCE DELETE NOW",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                                lineNumber: 126,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
+                        lineNumber: 124,
+                        columnNumber: 17
+                    }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                         variant: "primary",
                         className: "my-2",
                         type: "submit",
-                        children: "DONE"
+                        children: "DELETE USER"
                     }, void 0, false, {
                         fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 95,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        as: (0, _reactRouterDom.Link),
-                        to: "/profile",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            variant: "secondary text-white",
-                            className: "m-2",
-                            children: "RETURN TO PROFILE"
-                        }, void 0, false, {
-                            fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                            lineNumber: 97,
-                            columnNumber: 25
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                        lineNumber: 96,
-                        columnNumber: 21
+                        lineNumber: 128,
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-                lineNumber: 94,
-                columnNumber: 17
+                lineNumber: 123,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
-        lineNumber: 69,
+        lineNumber: 90,
         columnNumber: 9
     }, this);
 };
