@@ -40179,10 +40179,16 @@ const LoginView = function({ onEntered  }) {
         }).then(function(info) {
             console.log("SPACESUIT SYSTEM RESPONSE", info);
             if (info.user) {
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a success`);
+                speechSynthesis.speak(notify);
                 localStorage.setItem("user", JSON.stringify(info.user));
                 localStorage.setItem("token", info.token);
                 onEntered(info.user, info.token);
-            } else alert("SITE ENTRY FAILURE");
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a failure. Try again`);
+                speechSynthesis.speak(notify);
+                alert("SITE ENTRY FAILURE");
+            }
         }).catch(function(e) {
             alert("SYSTEM ISSUE OCCURRED");
         });
@@ -40198,7 +40204,7 @@ const LoginView = function({ onEntered  }) {
                             children: "Username"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 32,
+                            lineNumber: 36,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -40212,13 +40218,13 @@ const LoginView = function({ onEntered  }) {
                             required: true
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 33,
+                            lineNumber: 37,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 31,
+                    lineNumber: 35,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -40228,7 +40234,7 @@ const LoginView = function({ onEntered  }) {
                             children: "Code"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 36,
+                            lineNumber: 40,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -40242,13 +40248,13 @@ const LoginView = function({ onEntered  }) {
                             required: true
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 37,
+                            lineNumber: 41,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 35,
+                    lineNumber: 39,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40261,7 +40267,7 @@ const LoginView = function({ onEntered  }) {
                             children: "DONE"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 40,
+                            lineNumber: 44,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -40273,29 +40279,29 @@ const LoginView = function({ onEntered  }) {
                                 children: "NEW USER"
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 42,
+                                lineNumber: 46,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 41,
+                            lineNumber: 45,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 39,
+                    lineNumber: 43,
                     columnNumber: 21
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 30,
+            lineNumber: 34,
             columnNumber: 17
         }, this)
     }, void 0, false, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 29,
+        lineNumber: 33,
         columnNumber: 13
     }, this);
 };
@@ -40992,10 +40998,19 @@ const RegistrationView = function() {
             }
         }).then(function(res) {
             if (res.status === 201) {
-                alert("REGISTRATION COMPLETE");
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
+                speechSynthesis.speak(notify);
+                alert("REGISTRATION COMPLETE: GO TO LOGIN FOR EXISTING USER");
                 window.location.reload();
-            } else if (res.status === 400) alert("USERNAME IS TAKEN");
-            else alert("REGISTRATION FAILURE");
+            } else if (res.status === 400) {
+                var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
+                speechSynthesis.speak(notify);
+                alert("USERNAME IS TAKEN");
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
+                speechSynthesis.speak(notify);
+                alert("REGISTRATION FAILURE: TRY AGAIN");
+            }
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
@@ -41008,7 +41023,7 @@ const RegistrationView = function() {
                         children: "Forename"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 46,
+                        lineNumber: 52,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41022,13 +41037,13 @@ const RegistrationView = function() {
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 53,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 45,
+                lineNumber: 51,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41038,7 +41053,7 @@ const RegistrationView = function() {
                         children: "Surname"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 56,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41052,13 +41067,13 @@ const RegistrationView = function() {
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 51,
+                        lineNumber: 57,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 49,
+                lineNumber: 55,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41068,7 +41083,7 @@ const RegistrationView = function() {
                         children: "Email"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 54,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41081,13 +41096,13 @@ const RegistrationView = function() {
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 55,
+                        lineNumber: 61,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 53,
+                lineNumber: 59,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41097,7 +41112,7 @@ const RegistrationView = function() {
                         children: "Username"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 58,
+                        lineNumber: 64,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41111,13 +41126,13 @@ const RegistrationView = function() {
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 59,
+                        lineNumber: 65,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 57,
+                lineNumber: 63,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41127,7 +41142,7 @@ const RegistrationView = function() {
                         children: "Code"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 62,
+                        lineNumber: 68,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41141,13 +41156,13 @@ const RegistrationView = function() {
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 63,
+                        lineNumber: 69,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 61,
+                lineNumber: 67,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -41155,10 +41170,10 @@ const RegistrationView = function() {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                         className: "my-4",
-                        children: "(Optional) Birthday (dd mm)"
+                        children: "Birthday (dd mm)"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 66,
+                        lineNumber: 72,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -41167,17 +41182,17 @@ const RegistrationView = function() {
                         onChange: function(e) {
                             setBirthday(e.target.value);
                         },
-                        placeholder: "DD MM (Optional)",
+                        placeholder: "DD MM",
                         pattern: "[0-3][0-9] [0-1][0-9]"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 67,
+                        lineNumber: 73,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 65,
+                lineNumber: 71,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41190,7 +41205,7 @@ const RegistrationView = function() {
                         children: "DONE"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 70,
+                        lineNumber: 76,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -41202,24 +41217,24 @@ const RegistrationView = function() {
                             children: "EXISTING USER"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 72,
+                            lineNumber: 78,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 71,
+                        lineNumber: 77,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 69,
+                lineNumber: 75,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 44,
+        lineNumber: 50,
         columnNumber: 9
     }, this);
 };

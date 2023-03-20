@@ -15,10 +15,14 @@ export const LoginView = function ({onEntered}) {
         }).then(function (info) {
             console.log('SPACESUIT SYSTEM RESPONSE', info);
             if (info.user) {
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a success`);
+                speechSynthesis.speak(notify);
                 localStorage.setItem('user', JSON.stringify(info.user));
                 localStorage.setItem('token', info.token);
                 onEntered(info.user, info.token);
             } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a failure. Try again`);
+                speechSynthesis.speak(notify);
                 alert('SITE ENTRY FAILURE');
             }
         }).catch(function (e) {

@@ -31,12 +31,18 @@ export const RegistrationView = function () {
             }
         }).then(function (res) {
             if (res.status === 201) {
-                alert('REGISTRATION COMPLETE');
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
+                speechSynthesis.speak(notify);
+                alert('REGISTRATION COMPLETE: GO TO LOGIN FOR EXISTING USER');
                 window.location.reload();
             } else if (res.status === 400) {
+                var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
+                speechSynthesis.speak(notify);
                 alert('USERNAME IS TAKEN');
             } else {
-                alert('REGISTRATION FAILURE');
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
+                speechSynthesis.speak(notify);
+                alert('REGISTRATION FAILURE: TRY AGAIN');
             }
         });
     };
@@ -63,8 +69,8 @@ export const RegistrationView = function () {
                     <Form.Control type='password' value={code} onChange={function (e) {setCode(e.target.value);}} placeholder='Your Code' minLength='10' required />
                 </Form.Group>
                 <Form.Group controlId='regBirthday'>
-                    <Form.Label className='my-4'>(Optional) Birthday (dd mm)</Form.Label>
-                    <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
+                    <Form.Label className='my-4'>Birthday (dd mm)</Form.Label>
+                    <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM' pattern='[0-3][0-9] [0-1][0-9]' />
                 </Form.Group>
                 <div className='btn-group'>
                     <Button variant='primary' className='my-2' type='submit'>DONE</Button>
