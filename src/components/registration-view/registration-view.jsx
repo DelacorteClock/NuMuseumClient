@@ -31,17 +31,17 @@ export const RegistrationView = function () {
             }
         }).then(function (res) {
             if (res.status === 201) {
-                var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
-                speechSynthesis.speak(notify);
+                /**var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
+                speechSynthesis.speak(notify);**/
                 alert('REGISTRATION COMPLETE: GO TO LOGIN FOR EXISTING USER');
                 window.location.reload();
             } else if (res.status === 400) {
-                var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
-                speechSynthesis.speak(notify);
+                /**var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
+                speechSynthesis.speak(notify);**/
                 alert('USERNAME IS TAKEN');
             } else {
-                var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
-                speechSynthesis.speak(notify);
+                /**var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
+                speechSynthesis.speak(notify);**/
                 alert('REGISTRATION FAILURE: TRY AGAIN');
             }
         });
@@ -73,7 +73,7 @@ export const RegistrationView = function () {
                     <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM' pattern='[0-3][0-9] [0-1][0-9]' />
                 </Form.Group>
                 <div className='btn-group'>
-                    <Button variant='primary' className='my-2' type='submit'>DONE</Button>
+                    <Button variant='primary' className='my-2' type='submit'>REGISTER</Button>
                     <Link as={Link} to='/login'>
                         <Button variant='secondary text-white' className='m-2'>EXISTING USER</Button>
                     </Link>

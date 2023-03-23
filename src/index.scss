@@ -9,4 +9,11 @@ $border-color-translucent: transparent;
 //Text
 $card-color: #000;
 
+//For submit
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
 @import '~bootstrap/scss/bootstrap.scss';
