@@ -55,8 +55,8 @@ export const ProfileEditView = function () {
                 }).then(function (info) {
                     console.log(info);
                     localStorage.setItem('user', JSON.stringify(info));
-                    /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
-                    speechSynthesis.speak(notify);**/
+                    var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
+                    speechSynthesis.speak(notify);
                     alert(`PROFILE UPDATED`);
                     window.location.reload();
                 });
@@ -74,14 +74,14 @@ export const ProfileEditView = function () {
             }
         }).then(function (res) {
             if (res.status === 200) {
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is now deleted successfully.`);
-                speechSynthesis.speak(notify);**/
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now deleted successfully.`);
+                speechSynthesis.speak(notify);
                 alert(`PROFILE DELETED SUCCESSFULLY`);
                 localStorage.clear();
                 window.location.reload();
             } else {
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is not deleted successfully.`);
-                speechSynthesis.speak(notify);**/
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is not deleted successfully.`);
+                speechSynthesis.speak(notify);
                 alert(`PROFILE NOT DELETED SUCCESSFULLY`);
             }
         });
@@ -114,7 +114,7 @@ export const ProfileEditView = function () {
                         <Form.Control type='text' value={birthday} onChange={function (e) {setBirthday(e.target.value);}} placeholder='DD MM (Optional)' pattern='[0-3][0-9] [0-1][0-9]' />
                     </Form.Group>
                     <div className='btn-group'>
-                        <Button variant='primary' className='my-2' type='submit'>SUBMIT</Button>
+                        <Button variant='primary' className='my-2' type='submit'>DONE</Button>
                         <Link as={Link} to='/profile'>
                             <Button variant='secondary text-white' className='m-2'>RETURN TO PROFILE</Button>
                         </Link>

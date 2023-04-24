@@ -52,8 +52,8 @@ export const ItemView = function ({items}) {
                 }).then(function (info) {
                     console.log(info);
                     localStorage.setItem('user', JSON.stringify(info));
-                    /**var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
-                    speechSynthesis.speak(notify);**/
+                    var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
+                    speechSynthesis.speak(notify);
                     alert(`FAVOURITE ITEM \u00AB${title}\u00BB REMOVED`);
                     window.location.reload();
                 });
@@ -80,8 +80,8 @@ export const ItemView = function ({items}) {
                 }).then(function (info) {
                     console.log(info);
                     localStorage.setItem('user', JSON.stringify(info));
-                    /**var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
-                    speechSynthesis.speak(notify);**/
+                    var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
+                    speechSynthesis.speak(notify);
                     alert(`FAVOURITE ITEM \u00AB${title}\u00BB ADDED`);
                     window.location.reload();
                 });

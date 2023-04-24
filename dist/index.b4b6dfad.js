@@ -39686,8 +39686,9 @@ const ItemView = function({ items  }) {
             }).then(function(info) {
                 console.log(info);
                 localStorage.setItem("user", JSON.stringify(info));
-                /**var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
-                    speechSynthesis.speak(notify);**/ alert(`FAVOURITE ITEM \u00AB${title}\u00BB REMOVED`);
+                var notify = new SpeechSynthesisUtterance(`Favourite item ${title} removed from profile. Just to let you know`);
+                speechSynthesis.speak(notify);
+                alert(`FAVOURITE ITEM \u00AB${title}\u00BB REMOVED`);
                 window.location.reload();
             });
             else alert("SITE ERROR OCCURRED");
@@ -39710,8 +39711,9 @@ const ItemView = function({ items  }) {
             }).then(function(info) {
                 console.log(info);
                 localStorage.setItem("user", JSON.stringify(info));
-                /**var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
-                    speechSynthesis.speak(notify);**/ alert(`FAVOURITE ITEM \u00AB${title}\u00BB ADDED`);
+                var notify = new SpeechSynthesisUtterance(`Favourite item ${title} added to profile. Just to let you know`);
+                speechSynthesis.speak(notify);
+                alert(`FAVOURITE ITEM \u00AB${title}\u00BB ADDED`);
                 window.location.reload();
             });
             else alert("SITE ERROR OCCURRED");
@@ -40177,12 +40179,16 @@ const LoginView = function({ onEntered  }) {
         }).then(function(info) {
             console.log("SPACESUIT SYSTEM RESPONSE", info);
             if (info.user) {
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a success`);
-                speechSynthesis.speak(notify);**/ localStorage.setItem("user", JSON.stringify(info.user));
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a success`);
+                speechSynthesis.speak(notify);
+                localStorage.setItem("user", JSON.stringify(info.user));
                 localStorage.setItem("token", info.token);
                 onEntered(info.user, info.token);
-            } else /**var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a failure. Try again`);
-                speechSynthesis.speak(notify);**/ alert("SITE ENTRY FAILURE");
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Login attempt was a failure. Try again`);
+                speechSynthesis.speak(notify);
+                alert("SITE ENTRY FAILURE");
+            }
         }).catch(function(e) {
             alert("SYSTEM ISSUE OCCURRED");
         });
@@ -40258,7 +40264,7 @@ const LoginView = function({ onEntered  }) {
                             variant: "primary",
                             className: "my-2",
                             type: "submit",
-                            children: "SUBMIT"
+                            children: "DONE"
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
                             lineNumber: 44,
@@ -40625,8 +40631,9 @@ const ProfileEditView = function() {
             }).then(function(info) {
                 console.log(info);
                 localStorage.setItem("user", JSON.stringify(info));
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
-                    speechSynthesis.speak(notify);**/ alert(`PROFILE UPDATED`);
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now updated.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE UPDATED`);
                 window.location.reload();
             });
             else alert("UPDATE FAILURE");
@@ -40641,12 +40648,16 @@ const ProfileEditView = function() {
             }
         }).then(function(res) {
             if (res.status === 200) {
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is now deleted successfully.`);
-                speechSynthesis.speak(notify);**/ alert(`PROFILE DELETED SUCCESSFULLY`);
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is now deleted successfully.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE DELETED SUCCESSFULLY`);
                 localStorage.clear();
                 window.location.reload();
-            } else /**var notify = new SpeechSynthesisUtterance(`Attention! Profile is not deleted successfully.`);
-                speechSynthesis.speak(notify);**/ alert(`PROFILE NOT DELETED SUCCESSFULLY`);
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Profile is not deleted successfully.`);
+                speechSynthesis.speak(notify);
+                alert(`PROFILE NOT DELETED SUCCESSFULLY`);
+            }
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40836,7 +40847,7 @@ const ProfileEditView = function() {
                                 variant: "primary",
                                 className: "my-2",
                                 type: "submit",
-                                children: "SUBMIT"
+                                children: "DONE"
                             }, void 0, false, {
                                 fileName: "src/components/profile-edit-view/profile-edit-view.jsx",
                                 lineNumber: 117,
@@ -40987,13 +40998,19 @@ const RegistrationView = function() {
             }
         }).then(function(res) {
             if (res.status === 201) {
-                /**var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
-                speechSynthesis.speak(notify);**/ alert("REGISTRATION COMPLETE: GO TO LOGIN FOR EXISTING USER");
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration is now complete. Go to the login page for existing users`);
+                speechSynthesis.speak(notify);
+                alert("REGISTRATION COMPLETE: GO TO LOGIN FOR EXISTING USER");
                 window.location.reload();
-            } else if (res.status === 400) /**var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
-                speechSynthesis.speak(notify);**/ alert("USERNAME IS TAKEN");
-            else /**var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
-                speechSynthesis.speak(notify);**/ alert("REGISTRATION FAILURE: TRY AGAIN");
+            } else if (res.status === 400) {
+                var notify = new SpeechSynthesisUtterance(`Attention! This username is in use. Choose another one`);
+                speechSynthesis.speak(notify);
+                alert("USERNAME IS TAKEN");
+            } else {
+                var notify = new SpeechSynthesisUtterance(`Attention! Your registration was a failure. Try again`);
+                speechSynthesis.speak(notify);
+                alert("REGISTRATION FAILURE: TRY AGAIN");
+            }
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
@@ -41185,7 +41202,7 @@ const RegistrationView = function() {
                         variant: "primary",
                         className: "my-2",
                         type: "submit",
-                        children: "REGISTER"
+                        children: "DONE"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
                         lineNumber: 76,
